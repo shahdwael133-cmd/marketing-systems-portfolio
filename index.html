@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Marketing systems portfolio: 54 automated systems across analytics, competitive intelligence, SEO, content production and applied AI.">
+<title>Shahd · Marketing Systems Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: one engineering-drawing "sheet". Title block up top, then a parts tray (one square per system),
+   the weekly shift board, the 3 production lines, growth chart, and the spec rows with real code. Left aligned. */
+:root{
+  --paper:#FBFCFB; --sheet:#FFFFFF; --ink:#101828; --body:#475467; --faint:#8A95A3;
+  --rule:#E3E8E5; --grid:rgba(3,109,53,.055); --green:#036D35; --mint:#DCFAE6; --leaf:#68D08C;
+  --code-bg:#F3F7F4; --code-ink:#1D2939; --code-com:#7B8794; --code-str:#036D35;
+  --c-cloud:#036D35; --c-apps:#4FB77A; --c-github:#2D5F8B; --c-laptop:#7B8794; --c-manual:#C3CBD3; --c-artifact:#B8862B;
+  --ok:#038A43; --warn:#B26B00; --muted:#98A2B3; --hl:#FFF4C2;
+  --f-display:"Akshar","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Akshar","Arial Narrow",system-ui,sans-serif;
+  --f-code:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0D1411; --sheet:#111A16; --ink:#E9F0EC; --body:#A8B5AE; --faint:#76847C;
+  --rule:#24312B; --grid:rgba(104,208,140,.06); --green:#4CC17C; --mint:#16301F; --leaf:#68D08C;
+  --code-bg:#0A100D; --code-ink:#D5E0DA; --code-com:#6E7D75; --code-str:#7FD9A0;
+  --c-cloud:#3DBE73; --c-apps:#9BE2B6; --c-github:#6FA3D2; --c-laptop:#94A0AC; --c-manual:#4E5A63; --c-artifact:#D9A84A;
+  --ok:#4CC17C; --warn:#E0A43A; --muted:#66727C; --hl:#3A3415; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0D1411; --sheet:#111A16; --ink:#E9F0EC; --body:#A8B5AE; --faint:#76847C;
+  --rule:#24312B; --grid:rgba(104,208,140,.06); --green:#4CC17C; --mint:#16301F; --leaf:#68D08C;
+  --code-bg:#0A100D; --code-ink:#D5E0DA; --code-com:#6E7D75; --code-str:#7FD9A0;
+  --c-cloud:#3DBE73; --c-apps:#9BE2B6; --c-github:#6FA3D2; --c-laptop:#94A0AC; --c-manual:#4E5A63; --c-artifact:#D9A84A;
+  --ok:#4CC17C; --warn:#E0A43A; --muted:#66727C; --hl:#3A3415; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--body);font-family:var(--f-body);font-size:17px;line-height:1.5;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+.wrap{max-width:1180px;margin:0 auto;padding-block:40px 80px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);color:var(--ink);text-wrap:balance;margin:0}
+h1{font-size:clamp(2.3rem,5.4vw,4.1rem);line-height:1.02;font-weight:600;letter-spacing:-.01em;max-width:17ch}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:600;line-height:1.1}
+h3{font-size:1.2rem;font-weight:600;line-height:1.2}
+p{margin:0}
+a{color:var(--green);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:2px}
+.lede{font-size:1.2rem;max-width:58ch;margin-top:18px}
+.lede b{color:var(--ink);font-weight:600}
+section{margin-top:72px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:22px}
+.sec-head p{max-width:60ch}
+.note{font-size:.95rem;color:var(--faint)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Title block (drawing-sheet style) */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:end}
+.tblock{border:2px solid var(--ink);background:var(--sheet);display:grid;grid-template-columns:1fr 1fr;font-variant-numeric:tabular-nums}
+.tblock>div{padding:12px 14px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);min-width:0}
+.tblock>div:nth-child(2n){border-right:0}
+.tblock>div.last{border-bottom:0}
+.tblock .k{font-size:.82rem;color:var(--faint);letter-spacing:.02em}
+.tblock .v{font-family:var(--f-display);font-size:2rem;font-weight:600;color:var(--ink);line-height:1.05}
+.tblock .v.sm{font-size:1.05rem;font-weight:500;line-height:1.3}
+.tblock .wide{grid-column:1/-1;border-right:0}
+.green{color:var(--green)}
+
+/* Legend + tray */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.95rem;margin-bottom:18px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:13px;height:13px;border-radius:2px;display:inline-block;flex:none}
+.sw.none{background:transparent!important;border:1.5px dashed var(--faint)}
+.tray{background:var(--sheet);border:1px solid var(--rule);padding:18px 18px 8px}
+.tray-row{display:grid;grid-template-columns:minmax(0,13rem) 2.2rem minmax(0,1fr);gap:12px;align-items:center;padding-block:8px;border-bottom:1px dashed var(--rule)}
+.tray-row:last-child{border-bottom:0}
+.tray-row .a{color:var(--ink);font-weight:500}
+.tray-row .c{font-family:var(--f-display);font-weight:600;color:var(--ink);text-align:right}
+.cells{display:flex;flex-wrap:wrap;gap:5px}
+.cell{width:22px;height:22px;border-radius:3px;border:0;padding:0;cursor:pointer;transition:transform .12s, opacity .2s}
+.cell:hover{transform:scale(1.18)}
+.cell.none{background:transparent!important;border:1.5px dashed var(--faint)}
+.cell.dim{opacity:.15}
+.tip{font-size:.95rem;min-height:1.6em;margin-top:10px;color:var(--ink)}
+
+/* Week board */
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid var(--rule);background:var(--sheet)}
+.day{border-right:1px solid var(--rule);min-width:0;display:flex;flex-direction:column}
+.day:last-child{border-right:0}
+.day h3{font-size:1.05rem;padding:10px 12px;border-bottom:2px solid var(--ink)}
+.day .jobs{display:flex;flex-direction:column;gap:10px;padding:12px}
+.job{display:grid;gap:3px}
+.job .t{display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);font-size:.95rem}
+.job .l{font-size:.93rem;line-height:1.3}
+.job .every{font-size:.8rem;color:var(--warn);font-weight:500}
+.day .empty{padding:12px;font-size:.9rem;color:var(--faint)}
+.day.busy h3{background:var(--mint)}
+
+/* Production lines */
+.line{margin-top:28px}
+.line h3{margin-bottom:12px}
+.stations{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding-bottom:6px}
+.st{flex:1 1 0;min-width:150px;background:var(--sheet);border:1px solid var(--rule);padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.st .when{font-size:.85rem;font-weight:600;color:var(--ink);display:flex;gap:6px;align-items:center}
+.st p{font-size:.93rem;line-height:1.35}
+.st.out{background:var(--mint);border-color:transparent}
+.arrow{flex:0 0 26px;display:flex;align-items:center;justify-content:center;color:var(--green)}
+.arrow svg{width:22px;height:14px}
+
+/* Growth chart + status */
+.grow{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:28px}
+.panel{background:var(--sheet);border:1px solid var(--rule);padding:18px;min-width:0}
+.panel h3{margin-bottom:4px}
+.chart svg{width:100%;height:auto;display:block;margin-top:10px}
+.chart text{font-family:var(--f-body);font-size:12px;fill:var(--faint)}
+.chart .lab{fill:var(--ink);font-size:12.5px}
+.statusbar{display:flex;height:26px;margin-top:14px;border-radius:3px;overflow:hidden}
+.statusbar div{height:100%}
+.slist{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.slist li{display:flex;justify-content:space-between;gap:12px;font-size:.96rem}
+.slist b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);padding-block:10px;z-index:5;border-bottom:1px solid var(--rule)}
+.chipbtn{font:inherit;font-size:.92rem;padding:5px 12px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chipbtn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.areanav{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.95rem;margin-top:4px}
+
+/* Spec rows */
+.area{margin-top:44px}
+.area-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.area-head .cnt{font-family:var(--f-display);color:var(--faint);font-size:1.1rem}
+.area-head p{flex-basis:100%;font-size:.98rem}
+.sys{display:grid;grid-template-columns:minmax(0,16rem) minmax(0,1fr);gap:10px 28px;padding-block:18px;border-bottom:1px solid var(--rule);scroll-margin-top:80px}
+.sys.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%{background:var(--hl)}100%{background:transparent}}
+.sys h3{font-size:1.15rem}
+.meta{display:flex;flex-direction:column;gap:6px;margin-top:8px;font-size:.9rem}
+.where{display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
+.sched{color:var(--body)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:500;width:fit-content;padding:1px 9px 1px 7px;border-radius:999px;border:1px solid currentColor}
+.pill i{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+.p-live{color:var(--ok)} .p-done{color:var(--ok)} .p-done i{background:transparent;border:1.5px solid currentColor}
+.p-ready{color:var(--green)} .p-ready i{background:transparent;border:1.5px solid currentColor}
+.p-wip{color:var(--warn)} .p-verdict{color:var(--warn)} .p-verdict i{border-radius:1px}
+.p-off{color:var(--muted)} .p-planned{color:var(--muted);border-style:dashed}
+.desc{color:var(--body);max-width:68ch}
+.nums{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.nums span{font-size:.88rem;background:var(--mint);color:var(--ink);padding:2px 9px;border-radius:3px;font-variant-numeric:tabular-nums}
+.links{margin-top:10px;font-size:.93rem;display:flex;flex-wrap:wrap;gap:4px 16px}
+.snip{margin-top:14px;border:1px solid var(--rule);background:var(--code-bg);min-width:0}
+.snip .path{font-size:.82rem;color:var(--faint);padding:6px 12px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.snip pre{margin:0;padding:12px;overflow-x:auto;font-family:var(--f-code);font-size:12.5px;line-height:1.55;color:var(--code-ink)}
+.snip .cm{color:var(--code-com)} .snip .s{color:var(--code-str)}
+.sys-main{min-width:0}
+
+/* Shelf, rules, loose ends */
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.shelf{display:flex;flex-wrap:wrap;gap:8px}
+.book{background:var(--sheet);border:1px solid var(--rule);padding:6px 11px;font-size:.93rem;color:var(--ink)}
+.book small{color:var(--faint);font-size:.82rem;margin-left:4px}
+ol.rules{margin:0;padding-left:1.4em;display:grid;gap:10px}
+ol.rules li::marker{color:var(--green);font-weight:600}
+ul.loose{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+ul.loose li{padding-left:22px;position:relative}
+ul.loose li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:9px;border:2px solid var(--warn);transform:rotate(45deg)}
+footer{margin-top:72px;padding-top:16px;border-top:2px solid var(--ink);font-size:.9rem;color:var(--faint);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+@media (max-width:900px){
+  .hero,.grow,.cols{grid-template-columns:minmax(0,1fr)}
+  .week{grid-template-columns:minmax(0,1fr)}
+  .day{border-right:0;border-bottom:1px solid var(--rule)}
+  .day .jobs{flex-direction:row;flex-wrap:wrap}
+  .job{flex:1 1 200px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .sys{grid-template-columns:minmax(0,1fr)}
+  .tray-row{grid-template-columns:minmax(0,1fr) 2rem;}
+  .tray-row .cells{grid-column:1/-1}
+  .stations{flex-direction:column}
+  .st{min-width:0}
+  .arrow{flex-basis:22px;transform:rotate(90deg)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.byline{font-size:1.05rem;color:var(--green);font-weight:500;margin-bottom:14px}
+ul.wins{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 36px}
+ul.wins li{padding-top:12px;border-top:2px solid var(--ink);min-width:0}
+ul.wins b{color:var(--ink);font-weight:600;display:block;font-size:1.1rem;margin-bottom:4px}
+.skillbars{display:grid;gap:10px;margin-top:16px}
+.sb{display:grid;grid-template-columns:minmax(0,12.5rem) minmax(0,1fr) 2rem;gap:10px;align-items:center;font-size:.95rem}
+.sb-l{color:var(--ink)} .sb b{color:var(--ink);text-align:right}
+.sb-track{height:12px;background:var(--rule);border-radius:2px;overflow:hidden;display:block}
+.sb-fill{display:block;height:100%;background:var(--green)}
+.nums .tag{background:transparent;border:1px solid var(--green);color:var(--green)}
+.why{max-width:70ch;margin-bottom:12px}
+.why b{color:var(--ink)}
+@media (max-width:900px){ul.wins{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.sb{grid-template-columns:minmax(0,1fr) 2rem}.sb-track{grid-column:1/-1;grid-row:2}}
+</style>
+<style>ol.rules b{color:var(--ink)}</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div>
+    <p class="byline">Shahd · Marketing Operations &amp; Automation · Cairo</p>
+    <h1>A complete marketing operation, architected by one person in 12 weeks</h1>
+    <p class="lede">As the sole marketer at a B2B on-demand manufacturing platform, I designed and deployed <b><span id="h-total">54</span> interconnected systems</b> spanning performance analytics, competitive intelligence, SEO, content production and applied AI. <b>Seven operate autonomously in the cloud</b> on a fixed cadence, with no human intervention. I built all of it with AI coding agents, coming from a business background with no formal engineering training.</p>
+  </div>
+  <div class="tblock" aria-label="Summary">
+    <div><div class="k">Systems deployed</div><div class="v num green" id="tb-total">54</div></div>
+    <div><div class="k">Build window</div><div class="v num">12 weeks</div></div>
+    <div><div class="k">Autonomous cloud pipelines</div><div class="v num">7</div></div>
+    <div><div class="k">Lines of code authored</div><div class="v num">25,292</div></div>
+    <div><div class="k">Data platforms integrated</div><div class="v num">7</div></div>
+    <div><div class="k">Proprietary AI skills</div><div class="v num">8</div></div>
+    <div class="wide last"><div class="k">Technology stack</div><div class="v sm">AI coding agents and scheduled cloud agents, Google Apps Script, GA4 and Search Console APIs, LinkedIn and Meta Graph APIs, GitHub Pages and Actions, Apify, Webflow, Remotion video, three.js 3D</div></div>
+  </div>
+</header>
+
+<section id="highlights">
+  <div class="sec-head"><h2>Signature achievements</h2></div>
+  <ul class="wins">
+    <li><b>Engineered an autonomous content production pipeline.</b> Five scheduled cloud agents produce 3 videos, 2 post carousels and 1 editorial carousel with captions every week, then consolidate the entire output into a single approval email.</li>
+    <li><b>Built a self-governing performance intelligence dashboard.</b> It integrates 15 data feeds across 7 platforms, benchmarks every 14-day period against the previous one, writes its own analysis and reports to leadership every 2 weeks. A built-in data integrity check halts publication and issues a diagnostic report whenever a source is stale.</li>
+    <li><b>Established a competitive intelligence program with zero tool budget.</b> Four global competitors are monitored every 2 weeks across LinkedIn, Reddit, review platforms, website changes, paid advertising and YouTube, on Apify's free plan with a hard $1 cost ceiling per run.</li>
+    <li><b>Shipped a proprietary 3D CAD viewer as a lead generation asset.</b> Engineers inspect their own STEP files directly in the browser, beside a quote request, targeting a search term with roughly 5,400 US searches a month.</li>
+    <li><b>Converted content performance data into an evidence-based creative formula.</b> A diagnostic across 128 posts isolated what the top performers shared: 31 to 65 second runtimes, Egyptian Arabic captions and a real team member on camera.</li>
+    <li><b>Re-architected a failing system for resilience.</b> When the first weekly content run, hosted locally, failed 3 times unattended, I migrated it to cloud infrastructure and validated that its output matched the original within 1.7%.</li>
+  </ul>
+</section>
+
+<section id="tray">
+  <div class="sec-head">
+    <h2>The full system landscape</h2>
+    <p class="note">Each square is one deployed system, coloured by where it runs. Select a square to view its specification.</p>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="tray" id="trayRows"></div>
+  <p class="tip" id="tip" aria-live="polite">&nbsp;</p>
+</section>
+
+<section id="skills">
+  <div class="grow">
+    <div class="panel">
+      <h3>Core competencies demonstrated</h3>
+      <p class="note">Number of the <span id="sk-total">54</span> systems that apply each discipline. Most combine several.</p>
+      <div class="skillbars" id="skillBars"></div>
+    </div>
+    <div class="panel chart">
+      <h3>Deployment velocity</h3>
+      <p class="note">Cumulative systems deployed, by the date each first went live.</p>
+      <div id="growChart"></div>
+    </div>
+  </div>
+</section>
+
+<section id="lines">
+  <div class="sec-head">
+    <h2>Flagship systems</h2>
+    <p>Three end-to-end pipelines. Each is a chain of automated stages that hand off to one another without manual input.</p>
+  </div>
+  <div id="lineWrap"></div>
+</section>
+
+<section id="specs">
+  <div class="sec-head">
+    <h2>System inventory and source code</h2>
+    <p>Code excerpts are reproduced verbatim from the production files, with identifying details redacted. Filter by deployment environment.</p>
+  </div>
+  <div class="filters" id="filters" role="group" aria-label="Filter by where it runs"></div>
+  <nav class="areanav" id="areaNav" aria-label="Jump to discipline"></nav>
+  <div id="areas"></div>
+</section>
+
+<section id="how">
+  <div class="cols">
+    <div>
+      <div class="sec-head"><h2>Engineering principles</h2></div>
+      <ol class="rules">
+        <li><b>End-to-end autonomy.</b> Every automation runs from data intake to final delivery. No manual steps hidden in the middle.</li>
+        <li><b>Verified before trusted.</b> Each system passes a full dry run and ships with a written operating manual.</li>
+        <li><b>Acceptance criteria first.</b> Visual work begins with written pass/fail standards, then is screenshot and scored against them.</li>
+        <li><b>Conversion by design.</b> Every content asset ends in a single commercial action: upload a drawing or request a quote.</li>
+        <li><b>Factual integrity.</b> Real photography and verified claims only. No fabricated statistics and no synthetic people.</li>
+        <li><b>Cost discipline.</b> Free tiers first. Any paid process is validated at minimum scale before full volume.</li>
+      </ol>
+    </div>
+    <div>
+      <div class="sec-head"><h2>Proprietary AI skills</h2></div>
+      <p style="margin-bottom:14px">Reusable instruction sets that encode my editorial and technical standards, so AI output meets them consistently.</p>
+      <div class="shelf" id="shelfList"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Shahd · Marketing systems portfolio · November 2026</span>
+  <span>All figures are drawn from the systems' own files and run records.</span>
+</footer>
+</div>
+
+<script type="text/plain" id="sn-delta" data-path="tools/build_dashboard_data.mjs" data-lines="L94-98 · 1,675 lines">/** Percentage change, or null when there is no comparable prior figure. */
+const delta = (now, before) => {
+  if (before === null || before === undefined || before === 0) return null;
+  return Number((((now - before) / before) * 100).toFixed(1));
+};</script>
+<script type="text/plain" id="sn-ctr" data-path="tools/render_dashboard.mjs" data-lines="L37-41 · 1,090 lines">/** CTR at or above 3% is green. Below that follows the existing mid/low bands. */
+const ctrBadge = (ctr) => {
+  const cls = ctr >= 3 ? 'green3' : ctr >= 1.5 ? 'mid' : 'lo';
+  return `<span class="badge ${cls}">${Number(ctr).toFixed(2)}%</span>`;
+};</script>
+<script type="text/plain" id="sn-refresh" data-path="Performance Reporting/apps-script/refresh_direct_tabs.gs" data-lines="L138-151 · 1,806 lines">function refreshAllDirectTabs() {
+  runJobs_('LAST_REFRESH', [
+    ['Google Analytics (detail)', refreshGa4_],
+    ['Google Analytics (daily totals)', refreshGa4Daily_],
+    ['Search Console', refreshGsc_],
+    ['Search Console (queries)', refreshGscQueries_],
+    ['YouTube videos', refreshYouTubeVideos_],
+    ['YouTube demographics', refreshYouTubeDemographics_],
+    ['LinkedIn posts', refreshLinkedInPosts_],
+    ['LinkedIn demographics', refreshLinkedInDemographics_],
+    ['UTM attribution', refreshUtmAttribution_],
+    ['UTM top posts', refreshUtmTopPosts_]
+  ]);
+}</script>
+<script type="text/plain" id="sn-bootstrap" data-path="Performance Reporting/apps-script/bootstrap_setup.gs" data-lines="L11-15">* ORDER MATTERS. The schedules are installed BEFORE any data is pulled. The
+ * pulls and the export are the heaviest thing this project does and can run up
+ * against the six minutes Apps Script allows; installing the schedules first
+ * means a slow first run still leaves a working weekly job behind rather than
+ * nothing at all.</script>
+<script type="text/plain" id="sn-export" data-path="Performance Reporting/apps-script/export_raw_tabs.gs" data-lines="L277-283">  // Weekly on Tuesday night. The cloud run on Wednesday decides whether this
+  // week is a reporting week, using run-state.json.
+  ScriptApp.newTrigger('runBiweeklyExport')
+    .timeBased()
+    .onWeekDay(ScriptApp.WeekDay.TUESDAY)
+    .atHour(22)</script>
+<script type="text/plain" id="sn-post" data-path="Performance Reporting/apps-script/publish_dashboard_web.gs" data-lines="L51-54">function doPost(e) {
+  if (!keyOk_(e)) {
+    return ContentService.createTextOutput('refused: wrong key');
+  }</script>
+<script type="text/plain" id="sn-lead" data-path="tools/fill_lead_drivers_tab.mjs" data-lines="L20-25">const LEAD_HEADER = ['Table', 'Dim 1', 'Dim 2', 'Dim 3', 'Dim 4', 'Sessions', 'Quote sessions',
+  'Call sessions', 'Events', 'Engagement rate', 'Avg session seconds', 'Window start', 'Window end'];
+const LEAD_MONTHS = 8;
+const LEAD_BOT_COUNTRIES = ['Singapore', 'China', 'Hong Kong'];
+const LEAD_MIN_SESSIONS = 5;
+const LEAD_CTA_PAGES = 20;</script>
+<script type="text/plain" id="sn-groups" data-path="tools/buyer_questions.mjs" data-lines="L40-48 · 271 lines">export const GROUPS = [
+  'Price and cost',
+  'Comparison',
+  'Problems and risk',
+  'Proof and reviews',
+  'Best options',
+  'Finding a supplier',
+  'General question',
+];</script>
+<script type="text/plain" id="sn-posting" data-path="tools/posting_status.mjs" data-lines="L17-19">* Matching: a published post matches a calendar row when the first 50 characters of the caption are the same
+ * (after collapsing spaces). FB codes come from go.[company-domain]/fb-NNNN in the post text; LinkedIn turns links into
+ * lnkd.in, so the li- code is read from where that link points (one hop only: requesting go.[company-domain] itself</script>
+<script type="text/plain" id="sn-journey" data-path="tools/ga4_buyer_journey.mjs" data-lines="L29 + L31">const buckets = { 'Same day': 0, '1 to 7 days': 0, '8 to 30 days': 0, 'Over 30 days': 0 }; let unknown = 0;
+...
+out.daysToQuote = { buckets, unknown };</script>
+<script type="text/plain" id="sn-guard" data-path="workflows/stage_a_session_guard.md" data-lines="L14-17">**Do not try to copy these cookies into another browser, a Playwright/Puppeteer session, or a
+cloud run.** Verified on 2026-09-08: a fresh Playwright browser using exported cookies is
+challenged by Cloudflare (error 600010) even on the same machine and the same home IP. The
+saved session only works in the profile that created it. This is not a bug to route around.</script>
+<script type="text/plain" id="sn-twins" data-path="tools/check_keyword_twins.mjs" data-lines="L35-37 · 165 lines">const FILLER = new Set(['service', 'services', 'custom', 'online', 'company', 'companies', 'shop',
+  'near', 'me', 'best', 'top', 'for', 'and', 'of', 'the', 'a', 'an', 'in', 'with', 'to']);
+// Extra words that blog slugs carry but searchers don't type.</script>
+<script type="text/plain" id="sn-metals" data-path="tools/part-viewer/src/format.js" data-lines="L3-8">export const METALS = {
+  steel: { name: 'Steel', density: 7.85, color: 0x8f969e, roughness: 0.42 },
+  stainless: { name: 'Stainless', density: 7.93, color: 0xbcc2c8, roughness: 0.26 },
+  aluminum: { name: 'Aluminum', density: 2.7, color: 0xd9dcdf, roughness: 0.5 },
+  brass: { name: 'Brass', density: 8.5, color: 0xc8a24e, roughness: 0.3 },
+};</script>
+<script type="text/plain" id="sn-baseline" data-path="tools/website_baseline/pull2_main.mjs" data-lines="L8-11">const signalFilter = f.or(
+  f.inList('eventName', ['quote_click', 'form_submit']),
+  f.and(f.eq('eventName', 'click'), f.contains('linkUrl', 'calendly')),
+);</script>
+<script type="text/plain" id="sn-case" data-path="tools/case-study-app/Code.gs" data-lines="L39-42 · 1,465 lines">  maxThumbChars: 45000, // a Google Sheets cell holds 50,000 characters
+  maxFailedTries: 30,   // wrong codes allowed in the window below, across everyone
+  lockSeconds: 600,     // how long sign-in pauses after that
+  emailCodes: false     // true = email each person their code automatically</script>
+<script type="text/plain" id="sn-lint" data-path="tools/creative_pipeline/lib.mjs" data-lines="L66-71 · the copy checker">  if (/[—–]/.test(text)) errs.push('contains an em or en dash');
+  const banned = /\b(leverage|seamless|game.?changer|unlock|elevate|delve|robust|cutting.edge|revolutioni[sz]e|synergy|empower|streamline)\b/i;
+  const b = text.match(banned); if (b) errs.push(`banned word: "${b[0]}"`);
+  if (/\bISO\s?\d/i.test(text)) errs.push('claims an ISO number. [Company] holds none on record.');
+  if (/±\s?0\.0[013-9]\d*\s?mm/.test(text)) errs.push('tolerance other than ±0.02mm');
+  if (/\bsince\s(19|20)\d\d\b/i.test(text)) errs.push('founding year claim');</script>
+<script type="text/plain" id="sn-whisper" data-path="tools/transcribe.py" data-lines="L54-58 · 72 lines">    from faster_whisper import WhisperModel
+    t0 = time.time()
+    model = WhisperModel(a.model, device="cpu", compute_type="int8")
+    segments, info = model.transcribe(str(src), beam_size=5, language=a.lang, vad_filter=True)
+    segments = list(segments)  # transcription runs here</script>
+<script type="text/plain" id="sn-caption" data-path="skills/b2b-caption-hooks/SKILL.md" data-lines="L41-47 (2 lines shortened)">1. **Hook (first 1 to 2 lines).** A real buyer problem the reader recognises, stated softly and concretely.
+2. **Context.** Show what actually happens today (the email chain, the cut-down drawing, the 3 suppliers). ...
+3. **Thesis early** (OSP). Say what [Company] does about it by the third paragraph at the latest.
+4. **Mechanism with facts.** How it works, step by step, with numbers: lead times by process, tolerances, file types, ...
+5. **Proof.** A named client or quote when the lever is social proof; otherwise specifics are the proof.
+6. **One CTA** that says what happens after the click, ending on `[company-domain]`.
+7. **Hashtags** (rules below).</script>
+<script>
+const WHERE = {
+  cloud:{label:"Autonomous cloud agent",v:"--c-cloud"},
+  apps:{label:"Google Apps Script",v:"--c-apps"},
+  github:{label:"GitHub Pages / Actions",v:"--c-github"},
+  artifact:{label:"Hosted web page",v:"--c-artifact"},
+  laptop:{label:"Local script or tool",v:"--c-laptop"},
+  manual:{label:"Structured sheet or platform build",v:"--c-manual"}
+};
+const STATUS = {
+  live:{label:"In production"}, done:{label:"Delivered"}, ready:{label:"Launch-ready"},
+  wip:{label:"In development"}, verdict:{label:"In final review"}
+};
+const SKILLS = {
+  auto:"Marketing automation", data:"Analytics and performance intelligence", content:"Content and video production",
+  seo:"SEO and conversion", ai:"Applied AI and prompt engineering", web:"Web and product prototyping", research:"Competitive and market intelligence"
+};
+const AREAS = [
+  {k:"rep",name:"Analytics & performance intelligence",d:"Automated reporting that arrives with the analysis already written."},
+  {k:"res",name:"Competitive & market intelligence",d:"Continuous monitoring of 4 global competitors and of real buyer search behaviour."},
+  {k:"seo",name:"SEO, web & conversion",d:"Content strategy, a full site re-architecture, conversion tracking and lead-generating web tools."},
+  {k:"sales",name:"Sales enablement",d:"Lead qualification, customer insight and proof assets for the sales function."},
+  {k:"content",name:"Content & video production",d:"An automated weekly content engine, proprietary video methods and the experiments that shaped them."},
+  {k:"ai",name:"Applied AI",d:"Proprietary AI instruction sets, synthetic buyer testing and quality assurance of AI products."}
+];
+const S = [
+ // Analytics
+ {a:"rep",t:"auto data ai",n:"Performance intelligence dashboard",w:"cloud",sc:"Biweekly",st:"live",d0:"2026-09-03",
+  d:"Rebuilds the marketing dashboard from 7 platforms, benchmarks each 14-day period against the previous one, generates written analysis, refreshes a permanent link and distributes it by email. A data integrity gate halts publication and issues a diagnostic report if any source is stale.",
+  nums:["14-day period benchmarking","15 data feeds","2,765 lines of analytics and rendering logic"],sn:["sn-delta","sn-ctr"]},
+ {a:"rep",t:"auto data",n:"Automated data ingestion layer",w:"apps",sc:"Weekly",st:"live",
+  d:"Pulls Google Analytics, Search Console, YouTube, LinkedIn, Instagram, Facebook and UTM attribution data directly into a central data store, then archives a full snapshot ahead of each reporting cycle.",
+  nums:["17 ingestion jobs","2,337 lines of Apps Script","self-renewing API access"],sn:["sn-refresh","sn-export","sn-bootstrap"]},
+ {a:"rep",t:"auto web",n:"Dashboard publishing endpoint",w:"apps",sc:"Each reporting cycle",st:"live",d0:"2026-09-10",
+  d:"A secured web endpoint that publishes the dashboard as a login-free page, so every stakeholder can open it from the report email.",sn:["sn-post"]},
+ {a:"rep",t:"data",n:"Lead driver attribution model",w:"cloud",sc:"Within each report",st:"live",d0:"2026-09-15",
+  d:"Identifies which pages and traffic sources generate quote requests and call bookings over a rolling 8-month window. Recommendations appear only while the underlying pattern holds, and bot traffic is excluded.",
+  nums:["rolling 8-month window","bot traffic filtered"],sn:["sn-lead"]},
+ {a:"rep",t:"data seo ai",n:"Buyer intent classifier",w:"cloud",sc:"Within each report",st:"ready",d0:"2026-11-20",
+  d:"Classifies English and Arabic search queries into the concerns buyers bring to the purchase, then prescribes an article to write, a post to publish or a page to improve.",
+  nums:["7 buyer intent categories","bilingual"],sn:["sn-groups"]},
+ {a:"rep",t:"data",n:"Central performance data store",w:"manual",sc:"Refreshed weekly",st:"live",d0:"2026-09-02",
+  d:"The single source of truth every report draws from, fed directly by each platform's official API.",nums:["15 data feeds"]},
+ {a:"rep",t:"data content",n:"Cross-platform social diagnostic",w:"laptop",sc:"On demand",st:"live",d0:"2026-10-29",
+  d:"Extracts post-level performance from LinkedIn, Facebook, Instagram and tracked links to diagnose reach and engagement. It isolated the attributes shared by the top-performing videos.",
+  nums:["128 posts analysed","3 platforms plus link tracking"]},
+ {a:"rep",t:"auto data",n:"Publishing audit tool",w:"laptop",sc:"On demand",st:"live",d0:"2026-10-25",
+  d:"Reconciles what actually went live on LinkedIn, Facebook and Instagram against the editorial calendar, then records each live link automatically.",
+  nums:["3 platforms","39 calendar entries reconciled"],sn:["sn-posting"]},
+ {a:"rep",t:"data",n:"Buyer journey analysis",w:"laptop",sc:"On demand",st:"done",
+  d:"Answers 4 strategic questions from Google Analytics: where quote requests originate, which markets are genuine, how long buyers deliberate, and which channels deliver them, AI assistants included.",
+  nums:["4 strategic questions","time-to-quote segmentation"],sn:["sn-journey"]},
+ // Competitive
+ {a:"res",t:"auto research",n:"Competitor data acquisition",w:"github",sc:"Biweekly",st:"live",d0:"2026-09-10",
+  d:"Collects competitor LinkedIn activity, Reddit discussion, customer reviews, website changes, paid ads and YouTube content, and diffs the ads against the previous cycle. An incomplete run publishes nothing.",
+  nums:["4 global competitors","free-tier infrastructure","$1 cost ceiling per run"]},
+ {a:"res",t:"auto research ai",n:"Competitive intelligence briefing",w:"cloud",sc:"Biweekly",st:"live",d0:"2026-09-10",
+  d:"Republishes the competitor brief, a paid ad library and a strategic action plan, and writes an executive brief with 3 to 5 recommended moves.",
+  nums:["3 living documents","3 to 5 strategic moves per cycle"]},
+ {a:"res",t:"web auto",n:"Secure stakeholder portal",w:"github",sc:"Weekly",st:"live",d0:"2026-09-10",
+  d:"Republishes intelligence reports behind encryption for colleagues without platform access, alongside onboarding and LinkedIn playbook pages.",nums:["encrypted pages","zero hosting cost"]},
+ {a:"res",t:"research",n:"Competitor technology audit",w:"laptop",sc:"On demand",st:"done",d0:"2026-11-05",
+  d:"A free alternative to paid technology lookup services. It maps the analytics and experimentation tools each competitor runs and captures their landing experience.",nums:["4 competitor stacks mapped"]},
+ {a:"res",t:"research seo",n:"Buyer question research framework",w:"laptop",sc:"Repeatable",st:"done",d0:"2026-11-05",
+  d:"A repeatable method for mapping the questions buyers ask at each stage before requesting a quote, documented so anyone can rerun it."},
+ {a:"res",t:"seo data",n:"Search demand analysis",w:"manual",sc:"16-month dataset",st:"done",d0:"2026-11-20",
+  d:"Sixteen months of search queries classified by buyer concern, which produced a prioritised list of pages to strengthen in search.",nums:["1,396 queries classified"]},
+ // SEO
+ {a:"seo",t:"seo auto ai",n:"SEO content brief engine",w:"laptop",sc:"Weekly",st:"live",
+  d:"Generates dated content briefs, deduplicated against every past keyword and topic. Its lead report also tracks AI search visibility, at-risk rankings and technical site health.",
+  nums:["deduplication on every brief"],sn:["sn-guard"]},
+ {a:"seo",t:"seo auto",n:"Keyword cannibalization guard",w:"laptop",sc:"Weekly",st:"live",d0:"2026-10-22",
+  d:"Screens each new keyword against past briefs, the editorial calendar, live articles and its own batch before anything is commissioned, so pages never compete with each other.",
+  nums:["4 topic pillars","4 sources cross-checked"],sn:["sn-twins"]},
+ {a:"seo",t:"seo web",n:"Website re-architecture",w:"manual",sc:"Staging environment",st:"wip",d0:"2026-10-30",
+  d:"Rebuilds the site's information architecture on a duplicate environment, so the live site is untouched until launch.",
+  nums:["~10 new pages","13 process × material pages","49 Arabic articles migrated"]},
+ {a:"seo",t:"seo data",n:"Website experiment design",w:"manual",sc:"60-day controlled test",st:"wip",d0:"2026-10-29",
+  d:"The re-architecture blueprint paired with a controlled before-and-after experiment, so every change is judged on quote requests and call bookings rather than opinion.",
+  nums:["60-day test","3-week baseline"],sn:["sn-baseline"]},
+ {a:"seo",t:"web seo",n:"Browser-based 3D CAD viewer",w:"github",sc:"Always on",st:"live",d0:"2026-11-02",
+  d:"Engineers open their own STEP files in the browser and see dimensions, volume and weight across 4 metals. Files never leave their device, and a quote request sits alongside.",
+  nums:["~5,400 US searches a month","0.7 MB initial load","19 of 19 live tests passed"],sn:["sn-metals"]},
+ {a:"seo",t:"web",n:"Interactive homepage concept",w:"github",sc:"Concept",st:"wip",d0:"2026-11-02",
+  d:"A scroll-driven narrative following one steel component from file upload to dispatch, with an interactive 3D product configurator.",
+  nums:["7 materials × 7 finishes"]},
+ {a:"seo",t:"web",n:"Quote experience prototype",w:"github",sc:"Clickable prototype",st:"wip",d0:"2026-11-15",
+  d:"A working prototype of a redesigned quoting flow: live pricing selection, flexible payment messaging, multi-currency display and quote-by-email.",
+  nums:["13 UX improvements","50 automated checks"]},
+ {a:"seo",t:"seo web",n:"Service page benchmarking program",w:"laptop",sc:"Pilot",st:"wip",d0:"2026-11-17",
+  d:"Long-form service pages scored against competitors on buyer needs, with explicit placeholders wherever a fact still requires verification.",
+  nums:["37 buyer needs × 6 competitors"]},
+ {a:"seo",t:"seo auto",n:"Local search profile automation",w:"laptop",sc:"On demand",st:"live",d0:"2026-10-21",
+  d:"Manages the company's Google Business Profile programmatically through Google's official API.",nums:["13 services","8 categories"]},
+ {a:"seo",t:"seo",n:"SEO specialist onboarding program",w:"github",sc:"Living document",st:"live",d0:"2026-11-09",
+  d:"A prioritised, time-boxed work plan designed so a new SEO hire could contribute from day one.",nums:["39 recommendations"]},
+ {a:"seo",t:"data",n:"Conversion tracking framework",w:"manual",sc:"Analytics and Tag Manager",st:"wip",d0:"2026-11-05",
+  d:"Restructured the website's conversion events so quote requests, form submissions and call bookings are each measured once and accurately.",
+  nums:["3 key conversion events","14-month data retention"]},
+ // Sales
+ {a:"sales",t:"data",n:"Lead qualification framework",w:"manual",sc:"Every inbound lead",st:"wip",d0:"2026-10-29",
+  d:"A structured inquiry log with 4 intake questions and automatic A/B/C fit grading, giving marketing and sales one shared definition of a qualified lead."},
+ {a:"sales",t:"web content",n:"Bilingual case study library",w:"github",sc:"Always on",st:"live",d0:"2026-09-16",
+  d:"An English and Arabic case study platform with secure team access, managed photo storage and automatic translation.",
+  nums:["bilingual","8,130 lines"],sn:["sn-case"]},
+ {a:"sales",t:"content",n:"Customer story capture system",w:"manual",sc:"Ongoing",st:"live",
+  d:"Captures real projects anonymously and releases a story only once the customer has given consent.",nums:["17-question framework"]},
+ {a:"sales",t:"research",n:"Ideal customer profile research",w:"manual",sc:"Repeatable",st:"done",d0:"2026-09-30",
+  d:"A structured survey of the sales team that rebuilt the company's ideal customer profile from frontline evidence.",nums:["55 questions refined to 30","profile v3"]},
+ // Content
+ {a:"content",t:"content auto",n:"Creative production engine",w:"laptop",sc:"Powers every content job",st:"live",d0:"2026-10-04",
+  d:"The core rendering and quality-control layer: produces posts, carousels and videos, validates every line of copy against brand rules and builds review pages.",
+  nums:["144 files","24,827 lines","automated copy compliance"],sn:["sn-lint"]},
+ {a:"content",t:"content auto ai",n:"Content repurposing agent",w:"cloud",sc:"Biweekly",st:"live",d0:"2026-09-10",
+  d:"Analyses performance data, selects the posts and articles that generate leads, and adapts each into channel-native versions."},
+ {a:"content",t:"content auto",n:"Weekly video production agent",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-09",
+  d:"Produces 3 captioned videos every week and publishes them to a private review page.",nums:["3 videos a week","45-clip asset library"]},
+ {a:"content",t:"content auto",n:"Weekly social carousel agent",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-09",
+  d:"Produces the week's branded posts and conversion-focused posts, packaged as 2 carousels.",nums:["2 carousels a week"]},
+ {a:"content",t:"content auto",n:"Weekly editorial carousel agent",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-15",
+  d:"Produces 1 editorial carousel with captions each week, with topic rotation that prevents repetition within 4 weeks.",nums:["6 to 8 slides"]},
+ {a:"content",t:"auto",n:"Production digest orchestrator",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-24",
+  d:"Waits for the 3 production agents to finish, then consolidates their output into a single approval email.",nums:["3 agents coordinated"]},
+ {a:"content",t:"content",n:"Editorial calendar system",w:"manual",sc:"Daily",st:"live",
+  d:"The publishing calendar, designed so finished work is queued without ever overwriting scheduled content."},
+ {a:"content",t:"content",n:"Brand asset library",w:"laptop",sc:"Shared resource",st:"live",d0:"2026-10-05",
+  d:"Curated factory photography and video footage, processed and catalogued for reuse across every channel.",nums:["220 photos","45 clips from ~350 videos"]},
+ {a:"content",t:"content",n:"Signature video format",w:"laptop",sc:"House standard",st:"live",d0:"2026-10-09",
+  d:"The house production format for weekly video. Its first film received a 10 out of 10 rating from leadership."},
+ {a:"content",t:"content",n:"Motion film production standard",w:"laptop",sc:"Reusable template",st:"live",d0:"2026-11-02",
+  d:"A locked production recipe that every new motion film starts from, refined over 4 iterations to a 10 out of 10 rating.",nums:["38 s, 1920×1080"]},
+ {a:"content",t:"content",n:"3D product launch film",w:"laptop",sc:"Final cut",st:"ready",d0:"2026-11-05",
+  d:"A 3D film of a precision shaft being manufactured. Its camera choreography is saved as a reusable kit.",nums:["47 s"]},
+ {a:"content",t:"content web",n:"Platform launch film",w:"laptop",sc:"v1",st:"verdict",d0:"2026-11-20",
+  d:"A 3D scene built in three.js around a live recording of the quoting platform.",nums:["40 s"]},
+ {a:"content",t:"content",n:"Sketch-to-part film",w:"laptop",sc:"v3",st:"verdict",d0:"2026-11-05",
+  d:"A single continuous story: a sketch becomes an engineering drawing, then a 3D model, then the finished part in hand.",nums:["21 s, vertical"]},
+ {a:"content",t:"content ai",n:"Materials film with AI voice",w:"laptop",sc:"v3",st:"verdict",d0:"2026-11-05",
+  d:"A presenter-led hook and brass components film, narrated with a voice model trained locally at no cost.",nums:["25 s"]},
+ {a:"content",t:"content data",n:"LinkedIn format experiment",w:"laptop",sc:"Concluded",st:"ready",d0:"2026-11-17",
+  d:"Audited historical LinkedIn content, developed competing carousel styles, scored them and established the default format.",nums:["152 posts audited"]},
+ {a:"content",t:"content",n:"Carousel asset register",w:"artifact",sc:"Continuously updated",st:"live",d0:"2026-11-20",
+  d:"A single view of every carousel and its production stage.",nums:["34 carousels tracked"]},
+ {a:"content",t:"content data ai",n:"Predictive video diagnostics",w:"manual",sc:"Per edit",st:"live",d0:"2026-11-02",
+  d:"Applies an AI virality model to locate weak moments within an edit. Testing showed its headline score barely tracked real watch time, so it is used for diagnosis, not selection."},
+ {a:"content",t:"content ai",n:"Reference media intelligence",w:"laptop",sc:"On demand",st:"live",d0:"2026-11-05",
+  d:"Extracts captions and frames from reference videos and transcribes speech locally at no cost, including Egyptian Arabic.",sn:["sn-whisper"]},
+ {a:"content",t:"content",n:"Automated storyboarding",w:"laptop",sc:"Pre-production",st:"live",d0:"2026-11-04",
+  d:"Renders storyboard frames from real brand assets, so every film is approved before production begins."},
+ {a:"content",t:"content ai",n:"Generative video cost benchmark",w:"manual",sc:"Reference study",st:"done",d0:"2026-10-31",
+  d:"A structured evaluation of what each generative video feature costs and delivers on real brand assets, completed before any budget was committed.",nums:["382 credits evaluated","cost per second recorded"]},
+ // AI
+ {a:"ai",t:"ai content",n:"B2B caption framework",w:"laptop",sc:"Every caption",st:"live",d0:"2026-10-02",
+  d:"An AI instruction set encoding the approved B2B caption method: 3 ranked options, the persuasion lever applied, an opening comment and hashtags.",nums:["v3","202 lines"],sn:["sn-caption"]},
+ {a:"ai",t:"ai",n:"Prompt engineering framework",w:"laptop",sc:"Any AI system",st:"live",d0:"2026-11-04",
+  d:"Transforms a rough request into a production-grade prompt for any AI system, and documents what changed and why."},
+ {a:"ai",t:"ai research",n:"Synthetic buyer panel",w:"laptop",sc:"Pre-production",st:"live",d0:"2026-11-18",
+  d:"An AI procurement buyer and a deliberately sceptical counterpart score creative drafts out of 100 before any design time is committed.",nums:["9 evaluation rounds"]},
+ {a:"ai",t:"ai",n:"AI product quality assurance",w:"laptop",sc:"On demand",st:"done",d0:"2026-11-21",
+  d:"Stress-tested the company's AI quoting product against real engineering drawings and file formats, and documented where its pricing failed."}
+];
+S.forEach((s,i)=>s.id="sys-"+i);
+const esc = t => t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const swatch = w => `<span class="sw" style="background:var(${WHERE[w].v})"></span>`;
+["h-total","tb-total","sk-total"].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=S.length});
+
+// legend + tray
+document.getElementById("legend").innerHTML = Object.entries(WHERE).map(([k,o])=>{
+  const c=S.filter(s=>s.w===k).length; return c?`<span>${swatch(k)}${o.label} <b class="num" style="color:var(--ink)">${c}</b></span>`:""}).join("");
+const order = Object.keys(WHERE);
+document.getElementById("trayRows").innerHTML = AREAS.map(ar=>{
+  const items=S.filter(s=>s.a===ar.k).sort((x,y)=>order.indexOf(x.w)-order.indexOf(y.w));
+  return `<div class="tray-row"><span class="a">${ar.name}</span><span class="c num">${items.length}</span><div class="cells">${
+    items.map(s=>`<button class="cell" data-id="${s.id}" data-w="${s.w}" style="background:var(${WHERE[s.w].v})" aria-label="${esc(s.n)}, ${WHERE[s.w].label}"></button>`).join("")}</div></div>`}).join("");
+const tip=document.getElementById("tip");
+document.querySelectorAll(".cell").forEach(b=>{
+  const s=S.find(x=>x.id===b.dataset.id);
+  const show=()=>{tip.innerHTML=`<b>${esc(s.n)}</b> · ${WHERE[s.w].label} · ${STATUS[s.st].label}`};
+  b.addEventListener("mouseenter",show); b.addEventListener("focus",show);
+  b.addEventListener("click",()=>{setFilter("all");const el=document.getElementById(s.id);el.scrollIntoView({behavior:"smooth",block:"start"});el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash")});
+});
+
+// competency bars
+(function(){
+  const rows=Object.entries(SKILLS).map(([k,l])=>[l,S.filter(s=>s.t.split(" ").includes(k)).length]).sort((a,b)=>b[1]-a[1]);
+  const max=rows[0][1];
+  document.getElementById("skillBars").innerHTML=rows.map(([l,c])=>`<div class="sb"><span class="sb-l">${l}</span><span class="sb-track"><span class="sb-fill" style="width:${c/max*100}%"></span></span><b class="num">${c}</b></div>`).join("");
+})();
+
+// flagship pipelines
+const ARW=`<span class="arrow" aria-hidden="true"><svg viewBox="0 0 22 14"><path d="M0 7h18M13 1l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>`;
+const LINES=[
+ {h:"Self-governing performance intelligence",why:"Performance data was fragmented across 7 platforms, and manual reporting consumed time a one-person function cannot spare.",
+  st:[["Ingestion","apps","Official APIs feed Google, LinkedIn, Meta and attribution data into one store"],["Data store","manual","15 data feeds"],["Archive","apps","A full snapshot is preserved before each cycle"],["Analysis","cloud","Period-over-period benchmarking and AI-written commentary"],["Outcome","","A permanent dashboard link and a leadership briefing every 2 weeks, with an integrity gate that blocks stale data.",1]]},
+ {h:"Autonomous content production",why:"A single part-time marketer cannot film, edit, design and write a full week of multichannel content by hand.",
+  st:[["Repurposing","cloud","Top-performing posts and articles adapted for new channels"],["Video","cloud","3 captioned videos"],["Social","cloud","2 post carousels"],["Editorial","cloud","1 editorial carousel"],["Orchestration","cloud","All output consolidated into one email"],["Outcome","","A complete week of content ready for approval in one review, sustained after a migration from local to cloud infrastructure.",1]]},
+ {h:"Competitive intelligence at zero tool cost",why:"The company competes with 4 large global platforms, with no budget for paid monitoring software.",
+  st:[["Acquisition","github","LinkedIn, Reddit, reviews, website changes, ads and YouTube"],["Comparison","manual","Captures archived and ads diffed against the last cycle"],["Synthesis","cloud","Brief, ad library and strategic action plan updated"],["Distribution","github","Encrypted copies published for stakeholders"],["Outcome","","3 to 5 strategic recommendations every 2 weeks, on free-tier infrastructure with a $1 ceiling per run.",1]]}
+];
+document.getElementById("lineWrap").innerHTML=LINES.map(l=>`<div class="line"><h3>${l.h}</h3><p class="why"><b>The challenge:</b> ${l.why}</p><div class="stations">${
+  l.st.map(([w,k,p,o],i)=>`${i?ARW:""}<div class="st${o?" out":""}"><span class="when">${k?swatch(k):""}${w}</span><p>${p}</p></div>`).join("")}</div></div>`).join("");
+
+// velocity chart
+(function(){
+  const dated=S.filter(s=>s.d0).map(s=>({d:new Date(s.d0+"T00:00:00Z")})).sort((a,b)=>a.d-b.d);
+  const x0=Date.UTC(2026,8,1), x1=Date.UTC(2026,10,23), W=520,H=250,L=30,R=12,T=14,B=28;
+  const X=t=>L+(t-x0)/(x1-x0)*(W-L-R), max=Math.ceil(dated.length/10)*10, Y=v=>T+(1-v/max)*(H-T-B);
+  let path=`M${X(x0)},${Y(0)}`, n=0;
+  dated.forEach(p=>{path+=` L${X(+p.d)},${Y(n)}`; n++; path+=` L${X(+p.d)},${Y(n)}`});
+  path+=` L${X(x1)},${Y(n)}`;
+  let grid="";
+  for(let v=0;v<=max;v+=10){grid+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--rule)"/><text x="${L-6}" y="${Y(v)+4}" text-anchor="end">${v}</text>`}
+  [["Sep",Date.UTC(2026,8,1)],["Oct",Date.UTC(2026,9,1)],["Nov",Date.UTC(2026,10,1)]].forEach(([l,t])=>{grid+=`<text x="${X(t)}" y="${H-8}" text-anchor="start">${l}</text>`});
+  let best={c:0,t:0}; dated.forEach(p=>{const c=dated.filter(q=>q.d>=p.d&&q.d-p.d<7*864e5).length; if(c>best.c)best={c,t:+p.d}});
+  const bx=X(best.t), bw=X(best.t+7*864e5)-bx;
+  document.getElementById("growChart").innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Cumulative systems deployed">
+   ${grid}
+   <rect x="${bx}" y="${T}" width="${bw}" height="${H-T-B}" fill="var(--mint)" opacity=".8"/>
+   <path d="${path} L${X(x1)},${Y(0)} Z" fill="var(--green)" opacity=".12"/>
+   <path d="${path}" fill="none" stroke="var(--green)" stroke-width="2.2"/>
+   <circle cx="${X(x1)-2}" cy="${Y(n)}" r="4.5" fill="var(--green)"/>
+   <text class="lab" x="${bx-6}" y="${T+14}" text-anchor="end">Peak week: ${best.c} deployed</text>
+  </svg>`;
+})();
+
+// code excerpts
+function hl(src){
+  return src.split("\n").map(line=>{
+    const t=line.trim();
+    if(/^(\/\/|\/\*\*?|\*|#\s)/.test(t)) return `<span class="cm">${esc(line)}</span>`;
+    let code=line, com="";
+    const m=line.match(/^(.*?[^:])(\s\/\/\s.*|\s#\s.*)$/);
+    if(m && !/['"`]/.test(m[2])){code=m[1];com=m[2]}
+    return esc(code).replace(/('[^'\n]*'|"[^"\n]*")/g,'<span class="s">$1</span>')+(com?`<span class="cm">${esc(com)}</span>`:"");
+  }).join("\n");
+}
+function snip(id){
+  const el=document.getElementById(id); if(!el) return "";
+  return `<div class="snip"><div class="path"><span>${esc(el.dataset.path)}</span><span>${esc(el.dataset.lines)}</span></div><pre><code>${hl(el.textContent.replace(/^\n/,""))}</code></pre></div>`;
+}
+
+// inventory
+document.getElementById("areaNav").innerHTML=AREAS.map(a=>`<a href="#area-${a.k}">${a.name}</a>`).join("");
+document.getElementById("areas").innerHTML=AREAS.map(ar=>{
+  const items=S.filter(s=>s.a===ar.k);
+  return `<div class="area" id="area-${ar.k}"><div class="area-head"><h2>${ar.name}</h2><span class="cnt num" data-cnt="${ar.k}">${items.length}</span><p>${ar.d}</p></div>${
+   items.map(s=>`<article class="sys" id="${s.id}" data-w="${s.w}">
+     <div><h3>${esc(s.n)}</h3><div class="meta">
+       <span class="where">${swatch(s.w)}${WHERE[s.w].label}</span>
+       <span class="sched">${esc(s.sc)}</span>
+       <span class="pill p-${s.st}"><i></i>${STATUS[s.st].label}</span></div></div>
+     <div class="sys-main"><p class="desc">${esc(s.d)}</p>
+       <div class="nums">${s.t.split(" ").map(k=>`<span class="tag">${SKILLS[k]}</span>`).join("")}${(s.nums||[]).map(x=>`<span>${esc(x)}</span>`).join("")}</div>
+       ${(s.sn||[]).map(snip).join("")}
+     </div></article>`).join("")}</div>`}).join("");
+
+// filters
+const F=document.getElementById("filters");
+F.innerHTML=`<button class="chipbtn" data-f="all" aria-pressed="true">All <span class="num">${S.length}</span></button>`+
+ Object.entries(WHERE).map(([k,o])=>{const c=S.filter(s=>s.w===k).length;return c?`<button class="chipbtn" data-f="${k}" aria-pressed="false">${swatch(k)}${o.label} <span class="num">${c}</span></button>`:""}).join("");
+function setFilter(f){
+  F.querySelectorAll(".chipbtn").forEach(b=>b.setAttribute("aria-pressed",b.dataset.f===f?"true":"false"));
+  document.querySelectorAll(".sys").forEach(r=>r.hidden=!(f==="all"||r.dataset.w===f));
+  document.querySelectorAll(".area").forEach(a=>{const vis=a.querySelectorAll(".sys:not([hidden])").length;a.hidden=vis===0;a.querySelector("[data-cnt]").textContent=vis});
+  document.querySelectorAll(".cell").forEach(c=>c.classList.toggle("dim",!(f==="all"||c.dataset.w===f)));
+}
+F.addEventListener("click",e=>{const b=e.target.closest(".chipbtn");if(b)setFilter(b.dataset.f)});
+
+// AI skills
+const SHELF=[["B2B caption framework","ranked, lever-tagged copy"],["Prompt engineering framework","any AI system"],["Content repurposing system","one asset into many"],["Long-form adaptation","blog to Medium"],["SEO content brief","weekly briefs"],["Editorial article architecture","8-part narrative"],["CAD tutorial author","step-by-step format"],["Prompt structure method","goal, context, action, format"]];
+document.getElementById("shelfList").innerHTML=SHELF.map(([n,d])=>`<span class="book">${n}<small>${d}</small></span>`).join("");
+</script>
+</body>
+</html>
