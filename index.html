@@ -223,6 +223,29 @@ a.mrow:hover{background:var(--accent-soft)}
 .l1 .ln{background:var(--bg)}
 .gov{border:1px dashed var(--amber);background:var(--amber-soft);padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.92rem;color:var(--ink)}
 .gov b{font-family:var(--f-display);font-size:1.05rem}
+/* Outcomes */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);background:var(--surface);margin-bottom:18px}
+.kpis>div{padding:20px 18px;border-right:1px solid var(--rule);display:grid;gap:8px;align-content:start;min-width:0}
+.kpis>div:last-child{border-right:0}
+.kpis b{font-family:var(--f-display);font-size:clamp(2rem,4vw,2.9rem);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.kpis span{font-size:.9rem;line-height:1.45;color:var(--ink)}
+.idx-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.idx svg{width:100%;height:auto;display:block;margin:10px 0 8px}
+.idx text{font-family:var(--f-body);font-size:12px;fill:var(--faint)}
+.idx .lab{fill:var(--ink);font-weight:600}
+.results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--accent);background:var(--accent-soft);position:relative;padding-top:22px}
+.results .h{position:absolute;top:7px;left:14px;font-family:var(--f-code);font-size:.76rem;color:var(--accent)}
+.results>div{padding:6px 14px 14px;display:grid;gap:4px;align-content:start;min-width:0}
+.results b{font-family:var(--f-display);font-size:1.6rem;line-height:1.05;color:var(--ink);font-variant-numeric:tabular-nums}
+.results span{font-size:.86rem;line-height:1.4;color:var(--ink)}
+.nolist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--rule);background:var(--surface)}
+.nolist>div{padding:16px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);display:grid;gap:6px;align-content:start;min-width:0}
+.nolist>div:nth-child(3n){border-right:0}
+.nolist>div:nth-last-child(-n+3){border-bottom:0}
+.nolist b{color:var(--ink);font-family:var(--f-display);font-size:1.08rem;text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
+.nolist span{font-size:.92rem}
+@media (max-width:980px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis>div:nth-child(2n){border-right:0}.kpis>div:nth-child(-n+2){border-bottom:1px solid var(--rule)}.nolist{grid-template-columns:minmax(0,1fr)}.nolist>div{border-right:0!important;border-bottom:1px solid var(--rule)!important}.nolist>div:last-child{border-bottom:0!important}}
+@media (max-width:640px){.results{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:820px){.mrow{grid-template-columns:minmax(0,1fr);gap:4px}.mhead{display:none}.layer{grid-template-columns:minmax(0,1fr)}.layer .ln{border-right:0;border-bottom:1px solid var(--rule)}}
 </style>
 
@@ -253,15 +276,36 @@ a.mrow:hover{background:var(--accent-soft)}
     <span class="s">"Meta Graph"</span>, <span class="s">"Business Profile"</span>, <span class="s">"Webflow"</span>
   ],
   <span class="k">"cross_browser_tests"</span>: <span class="s">"19/19 passing"</span>,
+  <span class="k">"cloud_runs_completed"</span>: <span class="n">69</span>,
+  <span class="k">"scheduled_runs_missed"</span>: <span class="n">0</span>,
   <span class="k">"max_cost_per_scrape_run_usd"</span>: <span class="n">1.00</span>,
   <span class="k">"publishes_on_stale_data"</span>: <span class="n">false</span>
 }</pre>
   </div>
 </header>
 
+<section id="outcomes">
+  <div class="sec-head">
+    <span class="kicker">01 · outcomes</span>
+    <h2>What moved</h2>
+    <p>Absolute figures belong to the company, so everything here is a ratio, an index, or a count of my own systems' behaviour.</p>
+  </div>
+  <div class="kpis">
+    <div><b>+49%</b><span>users requesting a quote in November, against the May to August monthly average. Six days of the month were still to run.</span></div>
+    <div><b>2.1×</b><span>quote requests per month over the same comparison</span></div>
+    <div><b>69 / 0</b><span>unattended cloud runs since September, against scheduled runs missed</span></div>
+    <div><b>$0</b><span>spent on monitoring software to track 4 global competitors every 2 weeks</span></div>
+  </div>
+  <div class="panel chart idx">
+    <div class="idx-head"><h4>Users requesting a quote, indexed</h4><span class="note">May to August average = 100 · *Nov = 1 to 24 Nov · bot traffic excluded</span></div>
+    <div id="idxChart"></div>
+    <p class="note">This is correlation, not proof. Traffic rose over the same months, and a trend line can flatter anyone standing next to it. That's why the 60-day controlled test in case 4 exists: to measure how much of this lift is mine.</p>
+  </div>
+</section>
+
 <section id="problem">
   <div class="sec-head">
-    <span class="kicker">01 · the problem</span>
+    <span class="kicker">02 · the problem</span>
     <h2>Six constraints, one person</h2>
     <p>Custom metal parts are a high-stakes purchase. An engineer arrives with a drawing, a deadline and a supplier base they've learned not to trust. The platform exists to collapse that uncertainty into a quote and a delivery date.</p>
     <p>Its growth had the same problem one level up. Here is what I was working against, and what I built against each one.</p>
@@ -279,7 +323,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="architecture">
   <div class="sec-head">
-    <span class="kicker">02 · architecture</span>
+    <span class="kicker">03 · architecture</span>
     <h2>How the pieces fit</h2>
     <p>Five layers. Data enters at the bottom, decisions and buyer-facing products come out the top, and governance runs through all of it.</p>
   </div>
@@ -297,7 +341,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="loop">
   <div class="sec-head">
-    <span class="kicker">03 · operating loop</span>
+    <span class="kicker">04 · operating loop</span>
     <h2>The sequence every build runs through</h2>
     <p>Step 6 gets decided before step 4 starts. A product without a pre-agreed reason to die just accumulates.</p>
   </div>
@@ -313,7 +357,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="cases">
   <div class="sec-head">
-    <span class="kicker">04 · case studies</span>
+    <span class="kicker">05 · case studies</span>
     <h2>Five systems, in depth</h2>
     <p>Problem, constraints, trade-offs, telemetry, and what ships next. Company specifics are redacted.</p>
   </div>
@@ -349,6 +393,7 @@ a.mrow:hover{background:var(--accent-soft)}
         <div class="gr"><span class="h">guardrails</span><p>First load ≤ 0.7 MB. No file ever leaves the device.</p></div>
         <div class="kl"><span class="h">kill_criterion</span><p>Zero quote starts after 3 months: stop investing</p></div>
       </div>
+      <div class="results"><span class="h">results_so_far</span><div><b>5 days</b><span>from v1 to a production v2</span></div><div><b>94%</b><span>lighter first load than the bundled build (0.7 MB vs 11.5 MB)</span></div><div><b>19 / 19</b><span>live tests passing across 3 browsers</span></div></div>
       <div class="facts"><span>19 / 19 live tests across 3 browsers</span><span>~19 real test parts</span><span>4 metal densities for weight</span><span>4 tracked events</span></div>
       <div id="sn-slot-metals"></div>
       <p class="next"><b>Next:</b> wire the quote-click trigger into tag management so the north star reports itself, then A/B test the button copy.</p>
@@ -394,6 +439,7 @@ a.mrow:hover{background:var(--accent-soft)}
         <div class="gr"><span class="h">guardrails</span><p>Zero reports on stale data. Zero hand-typed numbers.</p></div>
         <div class="kl"><span class="h">routing</span><p>Leadership receives clean runs only. Failures route to me.</p></div>
       </div>
+      <div class="results"><span class="h">results</span><div><b>12 / 12</b><span>scheduled weekly runs since launch, alternating full builds with clean off-week exits</span></div><div><b>9×</b><span>conversion spread it exposed between the strongest and weakest landing pages</span></div><div><b>37%</b><span>of search query volume identified as non-buyer noise (commodity price news) and excluded before it could skew the analysis</span></div></div>
       <div id="sn-slot-delta"></div>
       <p class="next"><b>Next:</b> a buyer intent classifier that sorts English and Arabic search queries into 7 purchase concerns joins the report on its next cycle.</p>
     </div>
@@ -437,6 +483,7 @@ a.mrow:hover{background:var(--accent-soft)}
         <div class="gr"><span class="h">guardrails</span><p>0 lint violations shipped. 0 repeated topics in 4 weeks.</p></div>
         <div class="kl"><span class="h">degradation</span><p>If an agent fails, the digest reports "X of 3 ready" instead of hiding the gap</p></div>
       </div>
+      <div class="results"><span class="h">results</span><div><b>6 / 6</b><span>Thursdays delivered on schedule since the cloud cutover, 0 missed</span></div><div><b>6</b><span>publish-ready assets a week by design: 3 videos and 3 carousels, every one captioned</span></div><div><b>2.4× / 3.1×</b><span>reach of carousels and video over single images in my format study. The agents' output mix was rebuilt around it on 8 Nov.</span></div></div>
       <div id="sn-slot-lint"></div>
     </div>
   </article>
@@ -468,6 +515,7 @@ a.mrow:hover{background:var(--accent-soft)}
         <div class="gr"><span class="h">guardrails</span><p>Engagement rate. Bot traffic excluded.</p></div>
         <div class="kl"><span class="h">decision_rule</span><p>Keep what clears the noise floor. Roll back the rest.</p></div>
       </div>
+      <div class="results"><span class="h">early_read</span><div><b>100 → 149</b><span>users requesting a quote, indexed to the May to August average, November month to date</span></div><div><b>3</b><span>conversion events, each counted once, replacing a noisier taxonomy</span></div><div><b>Jan 2027</b><span>controlled readout that separates my contribution from the underlying trend</span></div></div>
       <div id="sn-slot-baseline"></div>
     </div>
   </article>
@@ -498,7 +546,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="adr">
   <div class="sec-head">
-    <span class="kicker">05 · decision records</span>
+    <span class="kicker">06 · decision records</span>
     <h2>The calls I made, and why</h2>
     <p>Kept in the format engineering teams use for architecture decisions: context, decision, consequence.</p>
   </div>
@@ -516,9 +564,41 @@ a.mrow:hover{background:var(--accent-soft)}
   </table></div>
 </section>
 
+<section id="collab">
+  <div class="sec-head">
+    <span class="kicker">07 · stakeholders</span>
+    <h2>Who I build with</h2>
+    <p>Small team, many interfaces. Each of these relationships shaped a spec.</p>
+  </div>
+  <div class="matrix">
+    <div class="mrow mhead"><span>Stakeholder</span><span>What they needed</span><span>How I worked with them</span></div>
+    <div class="mrow"><span class="mc">Sales</span><span>A customer profile grounded in real calls, and leads they could trust</span><span class="mb">Interviewed the team through a survey I cut from 55 questions to 30, rebuilt the ideal customer profile from their answers, and designed the A/B/C lead grade both teams log against</span></div>
+    <div class="mrow"><span class="mc">Leadership</span><span>One honest view of performance, without logging into seven tools</span><span class="mb">A report every 2 weeks with written analysis and recommendations. Every manufacturing process shown in a film is checked by them before it renders.</span></div>
+    <div class="mrow"><span class="mc">New SEO specialist</span><span>A way to contribute from the first day</span><span class="mb">A 39-item onboarding plan with priorities and timings, plus a clean handoff: site issues route to them, not to me</span></div>
+    <div class="mrow"><span class="mc">Platform team</span><span>Evidence about where the product breaks</span><span class="mb">Tested the AI quoting product end to end and wrote up its failure modes. Built a clickable quote flow prototype with 13 proposed changes and the open questions attached for review.</span></div>
+    <div class="mrow"><span class="mc">Content team</span><span>Topics that won't cannibalize existing pages</span><span class="mb">A keyword feeder that drops deduplicated topics straight into their calendar, checked against 4 sources first</span></div>
+  </div>
+</section>
+
+<section id="said-no">
+  <div class="sec-head">
+    <span class="kicker">08 · prioritization</span>
+    <h2>What I said no to</h2>
+    <p>Six options that were on the table, and why each one lost.</p>
+  </div>
+  <div class="nolist">
+    <div><b>Patching a fragile pipeline</b><span>Killed after 3 unattended failures. Rebuilt in the cloud behind a parity test instead of patched.</span></div>
+    <div><b>A carousel style that missed the bar</b><span>Paused the agent on its first day. It relaunched 2 days later in a different visual direction.</span></div>
+    <div><b>AI-generated imagery</b><span>Real factory photography only. No synthetic people, no fake-photo renders, even when they would have been faster.</span></div>
+    <div><b>Tracking every competitor</b><span>Narrowed monitoring from 6 competitors to 4 and kept paid social ads out of scope.</span></div>
+    <div><b>Shipping the homepage concept</b><span>Held off the live site until it's been reviewed. Earliest date: February.</span></div>
+    <div><b>Trusting a virality score</b><span>Demoted after it correlated at 0.17 with real watch time.</span></div>
+  </div>
+</section>
+
 <section id="releases">
   <div class="sec-head">
-    <span class="kicker">06 · release log</span>
+    <span class="kicker">09 · release log</span>
     <h2>Twelve weeks of shipping</h2>
   </div>
   <div class="rel">
@@ -542,7 +622,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="inventory">
   <div class="sec-head">
-    <span class="kicker">07 · full inventory</span>
+    <span class="kicker">10 · full inventory</span>
     <h2>All <span id="i-total">54</span> systems</h2>
     <p>Open any code excerpt to read the real source, with identifying details redacted.</p>
   </div>
@@ -552,7 +632,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="principles">
   <div class="sec-head">
-    <span class="kicker">08 · principles</span>
+    <span class="kicker">11 · principles</span>
     <h2>Rules I don't break</h2>
   </div>
   <div class="princ">
@@ -853,6 +933,20 @@ F.innerHTML=`<button class="chip" data-f="all" aria-pressed="true">All ${S.lengt
 F.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const f=b.dataset.f;
   F.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b?"true":"false"));
   document.querySelectorAll(".area").forEach(a=>a.hidden=!(f==="all"||a.dataset.area===f))});
+
+// indexed quote-intent chart (May-Aug avg = 100; Nov = 1-24 Nov)
+(function(){
+  const D=[["May",97.6],["Jun",86.1],["Jul",111.0],["Aug",105.3],["Sep",124.4],["Oct",134.0],["Nov*",149.3]];
+  const W=760,H=250,L=36,R=12,T=24,B=30,max=160,bw=(W-L-R)/D.length;
+  const Y=v=>T+(1-v/max)*(H-T-B);
+  let g="";
+  [0,50,100,150].forEach(v=>{g+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--rule)" ${v===100?'stroke-dasharray="4 4"':""}/><text x="${L-6}" y="${Y(v)+4}" text-anchor="end">${v}</text>`});
+  D.forEach(([m,v],i)=>{const x=L+i*bw+bw*.18,w=bw*.64,live=i>=4;
+    g+=`<rect x="${x}" y="${Y(v)}" width="${w}" height="${Y(0)-Y(v)}" rx="2" fill="${live?"var(--accent)":"var(--rule)"}"/>`;
+    g+=`<text class="lab" x="${x+w/2}" y="${Y(v)-7}" text-anchor="middle">${Math.round(v)}</text><text x="${x+w/2}" y="${H-9}" text-anchor="middle">${m}</text>`;});
+  const xs=L+4*bw;g+=`<line x1="${xs}" x2="${xs}" y1="${T-14}" y2="${Y(0)}" stroke="var(--ink)" stroke-width="1.2"/><text class="lab" x="${xs+6}" y="${T-4}">systems go live</text>`;
+  document.getElementById("idxChart").innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Users requesting a quote, indexed to the May to August average: May 98, June 86, July 111, August 105, September 124, October 134, November to date 149">${g}</svg>`;
+})();
 </script>
 </body>
 </html>
