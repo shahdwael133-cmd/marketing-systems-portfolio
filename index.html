@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Shahd Wael, product portfolio: growth infrastructure built as software. Case studies, architecture, decision records and source.">
-<title>Shahd Wael · Product Portfolio</title>
+<title>Shahd Wael, Product Portfolio</title>
 <style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -255,15 +255,15 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <header class="hero">
   <div>
-    <p class="who">Shahd Wael · Product portfolio · Cairo</p>
-    <h1>I turned a one-person marketing function into software.</h1>
+    <p class="who">Shahd Wael, Cairo</p>
+    <h1>I built the growth infrastructure of a manufacturing platform, as a team of one.</h1>
     <div class="lede">
-      <p>I joined a B2B on-demand manufacturing platform as its only marketer. No analysts, no designers, no engineers, no tooling budget.</p>
+      <p>I joined a B2B platform that makes custom metal parts on demand, as its only marketer. No analysts, no designers, no engineers, no tooling budget.</p>
       <p>The title said marketing. The real problem was infrastructure: fragmented data, finite hours, competitors nobody was watching, and buyers who hesitate at the exact moment they're asked to upload a file.</p>
       <p>So I ran growth the way a product team runs a product. Twelve weeks later, <b><span id="h-total">54</span> systems</b> are live or in final development, <b>7 of them on cron in the cloud</b>. I come from business, not computer science. Every line was written with AI coding agents as my pair programmer, and every architectural decision was mine.</p>
     </div>
   </div>
-  <div class="json" role="img" aria-label="Portfolio summary: 54 systems, 12 weeks, 7 cloud agents, 25,292 lines of code, 7 APIs, 19 of 19 cross-browser tests passed">
+  <div class="json" role="img" aria-label="Portfolio summary: 54 systems, 12 weeks, 7 cloud agents, 25,292 lines of code, 7 APIs, 19 of 19 cross browser tests passed">
     <div class="bar"><span>portfolio.json</span><span>Nov 2026</span></div>
 <pre><span class="c">// every value is read from the repos, not estimated</span>
 {
@@ -286,8 +286,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="outcomes">
   <div class="sec-head">
-    <span class="kicker">01 · outcomes</span>
-    <h2>What moved</h2>
+    <h2>Results so far</h2>
     <p>Absolute figures belong to the company, so everything here is a ratio, an index, or a count of my own systems' behaviour.</p>
   </div>
   <div class="kpis">
@@ -297,58 +296,55 @@ a.mrow:hover{background:var(--accent-soft)}
     <div><b>$0</b><span>spent on monitoring software to track 4 global competitors every 2 weeks</span></div>
   </div>
   <div class="panel chart idx">
-    <div class="idx-head"><h4>Users requesting a quote, indexed</h4><span class="note">May to August average = 100 · *Nov = 1 to 24 Nov · bot traffic excluded</span></div>
+    <div class="idx-head"><h4>Users requesting a quote, indexed</h4><span class="note">May to August average = 100. *Nov covers 1 to 24 Nov. Bot traffic excluded.</span></div>
     <div id="idxChart"></div>
-    <p class="note">This is correlation, not proof. Traffic rose over the same months, and a trend line can flatter anyone standing next to it. That's why the 60-day controlled test in case 4 exists: to measure how much of this lift is mine.</p>
+    <p class="note">This is correlation, not proof. Traffic rose over the same months, and a trend line can flatter anyone standing next to it. That's why the 60 day controlled test in case 4 exists: to measure how much of this lift is mine.</p>
   </div>
 </section>
 
 <section id="problem">
   <div class="sec-head">
-    <span class="kicker">02 · the problem</span>
-    <h2>Six constraints, one person</h2>
-    <p>Custom metal parts are a high-stakes purchase. An engineer arrives with a drawing, a deadline and a supplier base they've learned not to trust. The platform exists to collapse that uncertainty into a quote and a delivery date.</p>
+    <h2>The problem I set out to solve</h2>
+    <p>Custom metal parts are a high stakes purchase. An engineer arrives with a drawing, a deadline and a supplier base they've learned not to trust. The platform exists to collapse that uncertainty into a quote and a delivery date.</p>
     <p>Its growth had the same problem one level up. Here is what I was working against, and what I built against each one.</p>
   </div>
   <div class="matrix">
     <div class="mrow mhead"><span>Constraint</span><span>What it looked like</span><span>What I built</span></div>
     <a class="mrow" href="#case-data"><span class="mc">Fragmented signal</span><span>7 platforms, 7 versions of the truth, no analyst to reconcile them</span><span class="mb">An ingestion layer on cron, deterministic analytics, and a report that fails closed on stale data</span></a>
-    <a class="mrow" href="#case-agents"><span class="mc">Finite production capacity</span><span>A multichannel calendar and one part-time person to fill it</span><span class="mb">4 content agents and an orchestrator, with me as the human in the loop</span></a>
-    <a class="mrow" href="#inventory"><span class="mc">Competitive opacity</span><span>4 global incumbents moving every week, no budget for monitoring software</span><span class="mb">A free-tier intelligence pipeline with a $1 hard cap per run and a completeness gate</span></a>
-    <a class="mrow" href="#case-cad"><span class="mc">Buyer friction</span><span>Engineers won't hand proprietary geometry to a vendor they haven't vetted</span><span class="mb">A client-side 3D CAD viewer where the file never leaves the device</span></a>
-    <a class="mrow" href="#case-exp"><span class="mc">Decision quality</span><span>Website changes settled by opinion, and no shared definition of a qualified lead</span><span class="mb">Clean conversion telemetry, an A/B/C lead grade, and a powered 60-day experiment</span></a>
+    <a class="mrow" href="#case-agents"><span class="mc">Finite production capacity</span><span>A multichannel calendar and one part time person to fill it</span><span class="mb">4 content agents and an orchestrator, with me as the human in the loop</span></a>
+    <a class="mrow" href="#inventory"><span class="mc">Competitive opacity</span><span>4 global incumbents moving every week, no budget for monitoring software</span><span class="mb">A free tier intelligence pipeline with a $1 hard cap per run and a completeness gate</span></a>
+    <a class="mrow" href="#case-cad"><span class="mc">Buyer friction</span><span>Engineers won't hand proprietary geometry to a vendor they haven't vetted</span><span class="mb">A client side 3D CAD viewer where the file never leaves the device</span></a>
+    <a class="mrow" href="#case-exp"><span class="mc">Decision quality</span><span>Website changes settled by opinion, and no shared definition of a qualified lead</span><span class="mb">Clean conversion telemetry, an A/B/C lead grade, and a powered 60 day experiment</span></a>
     <a class="mrow" href="#case-ai"><span class="mc">Unvalidated AI</span><span>AI scores and outputs that look authoritative and are often wrong</span><span class="mb">Validation against ground truth before any model is allowed to drive a decision</span></a>
   </div>
 </section>
 
 <section id="architecture">
   <div class="sec-head">
-    <span class="kicker">03 · architecture</span>
-    <h2>How the pieces fit</h2>
-    <p>Five layers. Data enters at the bottom, decisions and buyer-facing products come out the top, and governance runs through all of it.</p>
+    <h2>System architecture</h2>
+    <p>Five layers. Data enters at the bottom, decisions and buyer facing products come out the top, and governance runs through all of it.</p>
   </div>
   <div class="arch">
     <div class="layers">
-      <div class="layer l5"><div class="ln"><b>Experience</b><span>what buyers touch</span></div><div class="lx">3D CAD viewer · quote flow prototype · interactive homepage concept · bilingual case study library</div></div>
-      <div class="layer l4"><div class="ln"><b>Production</b><span>what gets made</span></div><div class="lx">video, carousel and repurposing agents · orchestrator · render engine with a copy linter · storyboard renderer</div></div>
-      <div class="layer l3"><div class="ln"><b>Intelligence</b><span>what it means</span></div><div class="lx">competitor pipeline · buyer intent classifier (EN + AR) · search demand analysis · lead driver attribution</div></div>
-      <div class="layer l2"><div class="ln"><b>Telemetry</b><span>what happened</span></div><div class="lx">7-source ingestion on cron · central data store · snapshot exports · conversion event taxonomy</div></div>
-      <div class="layer l1"><div class="ln"><b>Sources</b><span>raw signal</span></div><div class="lx">GA4 · Search Console · YouTube · LinkedIn · Meta · UTM attribution · competitor sites, ads, reviews</div></div>
+      <div class="layer l5"><div class="ln"><b>Experience</b><span>what buyers touch</span></div><div class="lx">3D CAD viewer, quote flow prototype, interactive homepage concept, bilingual case study library</div></div>
+      <div class="layer l4"><div class="ln"><b>Production</b><span>what gets made</span></div><div class="lx">video, carousel and repurposing agents, orchestrator, render engine with a copy linter, storyboard renderer</div></div>
+      <div class="layer l3"><div class="ln"><b>Intelligence</b><span>what it means</span></div><div class="lx">competitor pipeline, buyer intent classifier (EN + AR), search demand analysis, lead driver attribution</div></div>
+      <div class="layer l2"><div class="ln"><b>Telemetry</b><span>what happened</span></div><div class="lx">7 source ingestion on cron, central data store, snapshot exports, conversion event taxonomy</div></div>
+      <div class="layer l1"><div class="ln"><b>Sources</b><span>raw signal</span></div><div class="lx">GA4, Search Console, YouTube, LinkedIn, Meta, UTM attribution, competitor sites, ads, reviews</div></div>
     </div>
-    <div class="gov"><b>Governance</b><span>fail-closed gates · completeness checks · cost ceilings · parity tests · model validation · human approval before anything publishes</span></div>
+    <div class="gov"><b>Governance</b><span>fail closed gates, completeness checks, cost ceilings, parity tests, model validation, human approval before anything publishes</span></div>
   </div>
 </section>
 
 <section id="loop">
   <div class="sec-head">
-    <span class="kicker">04 · operating loop</span>
-    <h2>The sequence every build runs through</h2>
-    <p>Step 6 gets decided before step 4 starts. A product without a pre-agreed reason to die just accumulates.</p>
+    <h2>How an idea reaches production</h2>
+    <p>Step 6 gets decided before step 4 starts. A product without a agreed in advance reason to die just accumulates.</p>
   </div>
   <div class="loop">
     <div class="step"><span class="i">step 1</span><h4>Problem</h4><p>Name the user and the job they're stuck on.</p><span class="ex">Engineers want to inspect a CAD file without uploading it anywhere.</span></div>
-    <div class="step"><span class="i">step 2</span><h4>Hypothesis</h4><p>Write down what should happen, and what would prove me wrong.</p><span class="ex">A free viewer pulls high-intent engineers into the quote flow.</span></div>
-    <div class="step"><span class="i">step 3</span><h4>Spec</h4><p>Settle the trade-offs on paper before any code.</p><span class="ex">Parse client-side. First load under 1 MB.</span></div>
+    <div class="step"><span class="i">step 2</span><h4>Hypothesis</h4><p>Write down what should happen, and what would prove me wrong.</p><span class="ex">A free viewer pulls high intent engineers into the quote flow.</span></div>
+    <div class="step"><span class="i">step 3</span><h4>Spec</h4><p>Settle the tradeoffs on paper before any code.</p><span class="ex">Parse client side. First load under 1 MB.</span></div>
     <div class="step"><span class="i">step 4</span><h4>Ship</h4><p>The smallest version that tests the hypothesis, behind real tests.</p><span class="ex">v1 on day one. v2 live 5 days later.</span></div>
     <div class="step"><span class="i">step 5</span><h4>Instrument</h4><p>Track the event that answers the question. Ignore vanity numbers.</p><span class="ex">Quote clicks tagged "own file" vs "sample file".</span></div>
     <div class="step"><span class="i">step 6</span><h4>Decide</h4><p>Iterate, scale or kill, against the criteria from step 2.</p><span class="ex">No quote starts in 3 months and I stop investing.</span></div>
@@ -357,14 +353,13 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="cases">
   <div class="sec-head">
-    <span class="kicker">05 · case studies</span>
-    <h2>Five systems, in depth</h2>
-    <p>Problem, constraints, trade-offs, telemetry, and what ships next. Company specifics are redacted.</p>
+    <h2>Case studies</h2>
+    <p>Problem, constraints, tradeoffs, telemetry, and what ships next. Company specifics are redacted.</p>
   </div>
 
   <article class="case" id="case-cad">
     <aside class="rail">
-      <span class="cn">case 1 / 5 · zero to one</span>
+      <span class="cn">Case 1 of 5: zero to one</span>
       <dl>
         <div><dt>Role</dt><dd>Product owner, designer and builder</dd></div>
         <div><dt>Users</dt><dd>Mechanical engineers and buyers holding a STEP file</dd></div>
@@ -383,26 +378,26 @@ a.mrow:hover{background:var(--accent-soft)}
       </div>
       <div class="tbl"><table>
         <tr><th>Decision</th><th>Rejected</th><th>Chosen</th><th>Rationale</th></tr>
-        <tr><td>Where files get parsed</td><td>Server upload</td><td class="chose">Client-side, in the browser</td><td>Zero data leaves the device. Hosting cost: $0.</td></tr>
-        <tr><td>Payload</td><td>Ship the 7.6 MB parser upfront</td><td class="chose">Lazy-load it when a file is opened</td><td>First load holds at 0.7 MB. Most visitors judge the page before they ever drop a file.</td></tr>
+        <tr><td>Where files get parsed</td><td>Server upload</td><td class="chose">Client side, in the browser</td><td>Zero data leaves the device. Hosting cost: $0.</td></tr>
+        <tr><td>Payload</td><td>Ship the 7.6 MB parser upfront</td><td class="chose">Lazy load it when a file is opened</td><td>First load holds at 0.7 MB. Most visitors judge the page before they ever drop a file.</td></tr>
         <tr><td>Instrumentation</td><td>Count all quote clicks</td><td class="chose">Tag clicks "own file" vs "sample"</td><td>Loading your own part signals intent. Clicking a sample signals curiosity. Different users, different funnels.</td></tr>
       </table></div>
       <div class="metrics">
         <div class="ns"><span class="h">north_star</span><p>Quote requests that originate in a viewer session</p></div>
-        <div class="in"><span class="h">input_metrics</span><p>Own-file opens per session; quote click rate, own file vs sample</p></div>
+        <div class="in"><span class="h">input_metrics</span><p>Own file opens per session; quote click rate, own file vs sample</p></div>
         <div class="gr"><span class="h">guardrails</span><p>First load ≤ 0.7 MB. No file ever leaves the device.</p></div>
         <div class="kl"><span class="h">kill_criterion</span><p>Zero quote starts after 3 months: stop investing</p></div>
       </div>
       <div class="results"><span class="h">results_so_far</span><div><b>5 days</b><span>from v1 to a production v2</span></div><div><b>94%</b><span>lighter first load than the bundled build (0.7 MB vs 11.5 MB)</span></div><div><b>19 / 19</b><span>live tests passing across 3 browsers</span></div></div>
       <div class="facts"><span>19 / 19 live tests across 3 browsers</span><span>~19 real test parts</span><span>4 metal densities for weight</span><span>4 tracked events</span></div>
       <div id="sn-slot-metals"></div>
-      <p class="next"><b>Next:</b> wire the quote-click trigger into tag management so the north star reports itself, then A/B test the button copy.</p>
+      <p class="next"><b>Next:</b> wire the quote click trigger into tag management so the north star reports itself, then A/B test the button copy.</p>
     </div>
   </article>
 
   <article class="case" id="case-data">
     <aside class="rail">
-      <span class="cn">case 2 / 5 · internal data product</span>
+      <span class="cn">Case 2 of 5: internal data product</span>
       <dl>
         <div><dt>Role</dt><dd>Product owner and data engineer</dd></div>
         <div><dt>Users</dt><dd>Leadership, who decide. Me, who operates.</dd></div>
@@ -429,25 +424,25 @@ a.mrow:hover{background:var(--accent-soft)}
       <div class="tbl"><table>
         <tr><th>Decision</th><th>Rejected</th><th>Chosen</th><th>Rationale</th></tr>
         <tr><td>Stale inputs</td><td>Publish with a warning</td><td class="chose">Fail closed: hold the run, send me a diagnostic</td><td>A wrong number in front of leadership costs more than a late one.</td></tr>
-        <tr><td>Ingestion</td><td>A third-party sync connector</td><td class="chose">Official APIs, called from inside Google</td><td>One less vendor in the chain, and I own the refresh schedule.</td></tr>
-        <tr><td>Distribution</td><td>A login-gated link</td><td class="chose">A public, read-only web endpoint</td><td>A test on 10 Sep showed logged-out stakeholders couldn't open the gated version.</td></tr>
+        <tr><td>Ingestion</td><td>A third party sync connector</td><td class="chose">Official APIs, called from inside Google</td><td>One less vendor in the chain, and I own the refresh schedule.</td></tr>
+        <tr><td>Distribution</td><td>A login gated link</td><td class="chose">A public, read only web endpoint</td><td>A test on 10 Sep showed logged out stakeholders couldn't open the gated version.</td></tr>
         <tr><td>Recommendations</td><td>Static advice</td><td class="chose">Advice that expires when its pattern stops holding</td><td>A stale recommendation is worse than none.</td></tr>
       </table></div>
       <div class="metrics">
         <div class="ns"><span class="h">north_star</span><p>Clean reports delivered on schedule</p></div>
         <div class="in"><span class="h">input_metrics</span><p>Feeds refreshed; sources passing freshness checks</p></div>
-        <div class="gr"><span class="h">guardrails</span><p>Zero reports on stale data. Zero hand-typed numbers.</p></div>
+        <div class="gr"><span class="h">guardrails</span><p>Zero reports on stale data. Zero hand typed numbers.</p></div>
         <div class="kl"><span class="h">routing</span><p>Leadership receives clean runs only. Failures route to me.</p></div>
       </div>
-      <div class="results"><span class="h">results</span><div><b>12 / 12</b><span>scheduled weekly runs since launch, alternating full builds with clean off-week exits</span></div><div><b>9×</b><span>conversion spread it exposed between the strongest and weakest landing pages</span></div><div><b>37%</b><span>of search query volume identified as non-buyer noise (commodity price news) and excluded before it could skew the analysis</span></div></div>
-      <div id="sn-slot-delta"></div>
+      <div class="results"><span class="h">results</span><div><b>12 / 12</b><span>scheduled weekly runs since launch, alternating full builds with clean off week exits</span></div><div><b>9×</b><span>conversion spread it exposed between the strongest and weakest landing pages</span></div><div><b>37%</b><span>of search query volume identified as non buyer noise (commodity price news) and excluded before it could skew the analysis</span></div></div>
+      <div id="sn-slot-ctr"></div>
       <p class="next"><b>Next:</b> a buyer intent classifier that sorts English and Arabic search queries into 7 purchase concerns joins the report on its next cycle.</p>
     </div>
   </article>
 
   <article class="case" id="case-agents">
     <aside class="rail">
-      <span class="cn">case 3 / 5 · multi-agent system</span>
+      <span class="cn">Case 3 of 5: multi agent system</span>
       <dl>
         <div><dt>Role</dt><dd>Product owner and systems designer</dd></div>
         <div><dt>Users</dt><dd>Me as approver; the audience downstream</dd></div>
@@ -458,7 +453,7 @@ a.mrow:hover{background:var(--accent-soft)}
     </aside>
     <div class="spec">
       <h3>A week of content, produced while I sleep</h3>
-      <p class="tl">One part-time person can't film, edit, design and caption a week of multichannel content. So I built agents that do the production and kept the one job that needs judgment: approval.</p>
+      <p class="tl">One part time person can't film, edit, design and caption a week of multichannel content. So I built agents that do the production and kept the one job that needs judgment: approval.</p>
       <div class="stations">
         <div class="st"><span class="w">agent 1</span><p>Repurposes top performers</p></div><span class="arr"><svg viewBox="0 0 22 14"><path d="M0 7h18M13 1l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
         <div class="st"><span class="w">agent 2</span><p>3 captioned videos</p></div><span class="arr"><svg viewBox="0 0 22 14"><path d="M0 7h18M13 1l7 6-7 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
@@ -483,14 +478,14 @@ a.mrow:hover{background:var(--accent-soft)}
         <div class="gr"><span class="h">guardrails</span><p>0 lint violations shipped. 0 repeated topics in 4 weeks.</p></div>
         <div class="kl"><span class="h">degradation</span><p>If an agent fails, the digest reports "X of 3 ready" instead of hiding the gap</p></div>
       </div>
-      <div class="results"><span class="h">results</span><div><b>6 / 6</b><span>Thursdays delivered on schedule since the cloud cutover, 0 missed</span></div><div><b>6</b><span>publish-ready assets a week by design: 3 videos and 3 carousels, every one captioned</span></div><div><b>2.4× / 3.1×</b><span>reach of carousels and video over single images in my format study. The agents' output mix was rebuilt around it on 8 Nov.</span></div></div>
+      <div class="results"><span class="h">results</span><div><b>6 / 6</b><span>Thursdays delivered on schedule since the cloud cutover, 0 missed</span></div><div><b>6</b><span>publish ready assets a week by design: 3 videos and 3 carousels, every one captioned</span></div><div><b>2.4× / 3.1×</b><span>reach of carousels and video over single images in my format study. The agents' output mix was rebuilt around it on 8 Nov.</span></div></div>
       <div id="sn-slot-lint"></div>
     </div>
   </article>
 
   <article class="case" id="case-exp">
     <aside class="rail">
-      <span class="cn">case 4 / 5 · measurement</span>
+      <span class="cn">Case 4 of 5: measurement</span>
       <dl>
         <div><dt>Role</dt><dd>Product owner and analyst</dd></div>
         <div><dt>Users</dt><dd>Leadership, sales, a newly hired SEO specialist</dd></div>
@@ -507,7 +502,7 @@ a.mrow:hover{background:var(--accent-soft)}
         <p><b>Clean telemetry.</b> I cut the event taxonomy to 3 conversion events (<code>quote_click</code>, <code>form_submit</code>, a call booking), each counted once, and extended data retention to 14 months.</p>
         <p><b>A shared definition.</b> Every inbound lead gets an A/B/C fit grade, so sales and marketing are counting the same thing.</p>
         <p><b>A baseline before any change.</b> Three weeks of untouched data, then changes released inside a fixed window.</p>
-        <p><b>Power analysis up front.</b> I measured the week-to-week noise before the test began, so I know the smallest effect that counts as real. A test that can't detect the effect you care about tells you nothing when it comes back flat.</p>
+        <p><b>Power analysis up front.</b> I measured the week to week noise before the test began, so I know the smallest effect that counts as real. A test that can't detect the effect you care about tells you nothing when it comes back flat.</p>
       </div>
       <div class="metrics">
         <div class="ns"><span class="h">primary_metric</span><p>Conversion events per session</p></div>
@@ -522,7 +517,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
   <article class="case" id="case-ai">
     <aside class="rail">
-      <span class="cn">case 5 / 5 · AI evaluation</span>
+      <span class="cn">Case 5 of 5: AI evaluation</span>
       <dl>
         <div><dt>Role</dt><dd>Evaluator</dd></div>
         <div><dt>Models</dt><dd>A virality predictor, a synthetic buyer panel, an AI quoting product, generative video tools</dd></div>
@@ -536,7 +531,7 @@ a.mrow:hover{background:var(--accent-soft)}
       <div class="tbl"><table>
         <tr><th>Model</th><th>Tested against</th><th>Finding</th><th>Decision</th></tr>
         <tr><td>Virality predictor</td><td>Real watch time on our own videos</td><td>Its hook score correlated at 0.17. Gaps under 3 points were noise.</td><td class="chose">Demoted from picking winners to locating weak seconds inside an edit</td></tr>
-        <tr><td>Synthetic buyer panel</td><td>An AI procurement buyer and a sceptical twin, scoring drafts out of 100 over 9 rounds</td><td>Good at catching weak drafts early</td><td class="chose">A pre-filter, never evidence of what real buyers want</td></tr>
+        <tr><td>Synthetic buyer panel</td><td>An AI procurement buyer and a sceptical twin, scoring drafts out of 100 over 9 rounds</td><td>Good at catching weak drafts early</td><td class="chose">A first filter, never evidence of what real buyers want</td></tr>
         <tr><td>An AI quoting product</td><td>Real engineering drawings and file formats, end to end</td><td>Accurate on complete inputs, systematically low when specs were missing</td><td class="chose">Failure modes documented</td></tr>
         <tr><td>Generative video tools</td><td>Cost and output quality per feature, on real brand assets</td><td>382 credits measured before any budget was committed</td><td class="chose">Every future render has a known cost per second</td></tr>
       </table></div>
@@ -546,8 +541,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="adr">
   <div class="sec-head">
-    <span class="kicker">06 · decision records</span>
-    <h2>The calls I made, and why</h2>
+    <h2>Key decisions and why I made them</h2>
     <p>Kept in the format engineering teams use for architecture decisions: context, decision, consequence.</p>
   </div>
   <div class="tbl"><table class="adr">
@@ -556,8 +550,8 @@ a.mrow:hover{background:var(--accent-soft)}
     <tr><td>002</td><td>Bad data reaching leadership</td><td class="chose">Fail closed on stale sources</td><td>Late beats wrong. A diagnostic goes out instead.</td></tr>
     <tr><td>003</td><td>Local jobs failing unattended</td><td class="chose">Migrate to cloud agents behind a parity test</td><td>Runs with the laptop closed. ≤ 1.7% output deviation.</td></tr>
     <tr><td>004</td><td>Monitoring 4 incumbents with no budget</td><td class="chose">Free tier, $1 hard cap per run</td><td>Cost can't surprise anyone</td></tr>
-    <tr><td>005</td><td>Partial scrape results</td><td class="chose">An incomplete run publishes nothing</td><td>No half-true competitor briefs</td></tr>
-    <tr><td>006</td><td>CAD files are commercially sensitive</td><td class="chose">Parse client-side; lazy-load the parser</td><td>$0 hosting, 0.7 MB first load, full privacy</td></tr>
+    <tr><td>005</td><td>Partial scrape results</td><td class="chose">An incomplete run publishes nothing</td><td>No half true competitor briefs</td></tr>
+    <tr><td>006</td><td>CAD files are commercially sensitive</td><td class="chose">Parse client side; lazy load the parser</td><td>$0 hosting, 0.7 MB first load, full privacy</td></tr>
     <tr><td>007</td><td>Notification overload</td><td class="chose">One orchestrated digest, not 3 emails</td><td>One review, one decision, once a week</td></tr>
     <tr><td>008</td><td>Pages competing for the same keyword</td><td class="chose">A cannibalization guard checks 4 sources before any brief</td><td>No research budget spent on a duplicate</td></tr>
     <tr><td>009</td><td>An AI metric nobody had validated</td><td class="chose">Test it against real watch time first</td><td>Model demoted before it could mislead</td></tr>
@@ -566,15 +560,14 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="collab">
   <div class="sec-head">
-    <span class="kicker">07 · stakeholders</span>
-    <h2>Who I build with</h2>
+    <h2>Working across teams</h2>
     <p>Small team, many interfaces. Each of these relationships shaped a spec.</p>
   </div>
   <div class="matrix">
     <div class="mrow mhead"><span>Stakeholder</span><span>What they needed</span><span>How I worked with them</span></div>
     <div class="mrow"><span class="mc">Sales</span><span>A customer profile grounded in real calls, and leads they could trust</span><span class="mb">Interviewed the team through a survey I cut from 55 questions to 30, rebuilt the ideal customer profile from their answers, and designed the A/B/C lead grade both teams log against</span></div>
     <div class="mrow"><span class="mc">Leadership</span><span>One honest view of performance, without logging into seven tools</span><span class="mb">A report every 2 weeks with written analysis and recommendations. Every manufacturing process shown in a film is checked by them before it renders.</span></div>
-    <div class="mrow"><span class="mc">New SEO specialist</span><span>A way to contribute from the first day</span><span class="mb">A 39-item onboarding plan with priorities and timings, plus a clean handoff: site issues route to them, not to me</span></div>
+    <div class="mrow"><span class="mc">New SEO specialist</span><span>A way to contribute from the first day</span><span class="mb">A 39 item onboarding plan with priorities and timings, plus a clean handoff: site issues route to them, not to me</span></div>
     <div class="mrow"><span class="mc">Platform team</span><span>Evidence about where the product breaks</span><span class="mb">Tested the AI quoting product end to end and wrote up its failure modes. Built a clickable quote flow prototype with 13 proposed changes and the open questions attached for review.</span></div>
     <div class="mrow"><span class="mc">Content team</span><span>Topics that won't cannibalize existing pages</span><span class="mb">A keyword feeder that drops deduplicated topics straight into their calendar, checked against 4 sources first</span></div>
   </div>
@@ -582,14 +575,13 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="said-no">
   <div class="sec-head">
-    <span class="kicker">08 · prioritization</span>
-    <h2>What I said no to</h2>
+    <h2>What I chose not to build</h2>
     <p>Six options that were on the table, and why each one lost.</p>
   </div>
   <div class="nolist">
     <div><b>Patching a fragile pipeline</b><span>Killed after 3 unattended failures. Rebuilt in the cloud behind a parity test instead of patched.</span></div>
     <div><b>A carousel style that missed the bar</b><span>Paused the agent on its first day. It relaunched 2 days later in a different visual direction.</span></div>
-    <div><b>AI-generated imagery</b><span>Real factory photography only. No synthetic people, no fake-photo renders, even when they would have been faster.</span></div>
+    <div><b>AI generated imagery</b><span>Real factory photography only. No synthetic people, no fake photo renders, even when they would have been faster.</span></div>
     <div><b>Tracking every competitor</b><span>Narrowed monitoring from 6 competitors to 4 and kept paid social ads out of scope.</span></div>
     <div><b>Shipping the homepage concept</b><span>Held off the live site until it's been reviewed. Earliest date: February.</span></div>
     <div><b>Trusting a virality score</b><span>Demoted after it correlated at 0.17 with real watch time.</span></div>
@@ -598,23 +590,22 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="releases">
   <div class="sec-head">
-    <span class="kicker">09 · release log</span>
-    <h2>Twelve weeks of shipping</h2>
+    <h2>Release history</h2>
   </div>
   <div class="rel">
     <ul class="log">
-      <li><time>2026-09-02</time><span><b>First direct API pull</b> into the data store</span></li>
-      <li><time>2026-09-03</time><span><b>Reporting agent v1</b> on a cron schedule</span></li>
-      <li><time>2026-09-10</time><span><b>Competitor intelligence pipeline</b>, stakeholder portal, public endpoint</span></li>
-      <li><time>2026-09-15</time><span><b>Lead driver attribution</b> over a rolling 8 months</span></li>
-      <li><time>2026-09-16</time><span><b>Bilingual case study library</b>, English and Arabic</span></li>
-      <li><time>2026-10-04</time><span><b>Render engine v1</b>, running locally</span></li>
-      <li><time>2026-10-10</time><span><b>Parity test passed</b>; content agents cut over to the cloud</span></li>
-      <li><time>2026-10-24</time><span><b>Orchestrator</b> collapses 3 emails into 1 digest</span></li>
-      <li><time>2026-10-29</time><span><b>Experiment design</b> and lead grading framework</span></li>
-      <li><time>2026-11-02</time><span><b>CAD viewer v1</b>; v2 live on 11-07</span></li>
-      <li><time>2026-11-16</time><span><b>Quote flow prototype v2</b>: 13 UX changes, 50 automated checks</span></li>
-      <li><time>2026-11-20</time><span><b>Buyer intent classifier</b>, English and Arabic</span></li>
+      <li><time>2 Sep</time><span><b>First direct API pull</b> into the data store</span></li>
+      <li><time>3 Sep</time><span><b>Reporting agent v1</b> on a cron schedule</span></li>
+      <li><time>10 Sep</time><span><b>Competitor intelligence pipeline</b>, stakeholder portal, public endpoint</span></li>
+      <li><time>15 Sep</time><span><b>Lead driver attribution</b> over a rolling 8 months</span></li>
+      <li><time>16 Sep</time><span><b>Bilingual case study library</b>, English and Arabic</span></li>
+      <li><time>4 Oct</time><span><b>Render engine v1</b>, running locally</span></li>
+      <li><time>10 Oct</time><span><b>Parity test passed</b>; content agents cut over to the cloud</span></li>
+      <li><time>24 Oct</time><span><b>Orchestrator</b> collapses 3 emails into 1 digest</span></li>
+      <li><time>29 Oct</time><span><b>Experiment design</b> and lead grading framework</span></li>
+      <li><time>2 Nov</time><span><b>CAD viewer v1</b>; v2 live on 7 Nov</span></li>
+      <li><time>16 Nov</time><span><b>Quote flow prototype v2</b>: 13 UX changes, 50 automated checks</span></li>
+      <li><time>20 Nov</time><span><b>Buyer intent classifier</b>, English and Arabic</span></li>
     </ul>
     <div class="panel chart"><h4>Cumulative systems shipped</h4><p class="note">By the date each first went live.</p><div id="growChart"></div></div>
   </div>
@@ -622,8 +613,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="inventory">
   <div class="sec-head">
-    <span class="kicker">10 · full inventory</span>
-    <h2>All <span id="i-total">54</span> systems</h2>
+    <h2>Complete system inventory: <span id="i-total">54</span> systems</h2>
     <p>Open any code excerpt to read the real source, with identifying details redacted.</p>
   </div>
   <div class="filters" id="filters" role="group" aria-label="Filter by layer"></div>
@@ -632,8 +622,7 @@ a.mrow:hover{background:var(--accent-soft)}
 
 <section id="principles">
   <div class="sec-head">
-    <span class="kicker">11 · principles</span>
-    <h2>Rules I don't break</h2>
+    <h2>Engineering principles</h2>
   </div>
   <div class="princ">
     <div><code>end_to_end</code><p>A system runs from data in to result delivered. No manual step hiding in the middle.</p></div>
@@ -646,22 +635,17 @@ a.mrow:hover{background:var(--accent-soft)}
 </section>
 
 <footer>
-  <span>Shahd Wael · Product portfolio · November 2026</span>
+  <span>Shahd Wael, product portfolio, November 2026</span>
   <span>Designed, built and deployed by me. Every figure comes from the systems' own code and run records.</span>
 </footer>
 </div>
 
-<script type="text/plain" id="sn-delta" data-path="tools/build_dashboard_data.mjs" data-lines="L94-98 · 1,675 lines">/** Percentage change, or null when there is no comparable prior figure. */
-const delta = (now, before) => {
-  if (before === null || before === undefined || before === 0) return null;
-  return Number((((now - before) / before) * 100).toFixed(1));
-};</script>
-<script type="text/plain" id="sn-ctr" data-path="tools/render_dashboard.mjs" data-lines="L37-41 · 1,090 lines">/** CTR at or above 3% is green. Below that follows the existing mid/low bands. */
+<script type="text/plain" id="sn-ctr" data-path="render_dashboard.mjs" data-lines="lines 37 to 41">/** CTR at or above 3% is green. Below that follows the existing mid/low bands. */
 const ctrBadge = (ctr) => {
   const cls = ctr >= 3 ? 'green3' : ctr >= 1.5 ? 'mid' : 'lo';
   return `<span class="badge ${cls}">${Number(ctr).toFixed(2)}%</span>`;
 };</script>
-<script type="text/plain" id="sn-refresh" data-path="Performance Reporting/apps-script/refresh_direct_tabs.gs" data-lines="L138-151 · 1,806 lines">function refreshAllDirectTabs() {
+<script type="text/plain" id="sn-refresh" data-path="refresh_direct_tabs.gs" data-lines="lines 138 to 151">function refreshAllDirectTabs() {
   runJobs_('LAST_REFRESH', [
     ['Google Analytics (detail)', refreshGa4_],
     ['Google Analytics (daily totals)', refreshGa4Daily_],
@@ -675,28 +659,22 @@ const ctrBadge = (ctr) => {
     ['UTM top posts', refreshUtmTopPosts_]
   ]);
 }</script>
-<script type="text/plain" id="sn-bootstrap" data-path="Performance Reporting/apps-script/bootstrap_setup.gs" data-lines="L11-15">* ORDER MATTERS. The schedules are installed BEFORE any data is pulled. The
+<script type="text/plain" id="sn-bootstrap" data-path="bootstrap_setup.gs" data-lines="lines 11 to 15">* ORDER MATTERS. The schedules are installed BEFORE any data is pulled. The
  * pulls and the export are the heaviest thing this project does and can run up
  * against the six minutes Apps Script allows; installing the schedules first
  * means a slow first run still leaves a working weekly job behind rather than
  * nothing at all.</script>
-<script type="text/plain" id="sn-export" data-path="Performance Reporting/apps-script/export_raw_tabs.gs" data-lines="L277-283">  // Weekly on Tuesday night. The cloud run on Wednesday decides whether this
-  // week is a reporting week, using run-state.json.
-  ScriptApp.newTrigger('runBiweeklyExport')
-    .timeBased()
-    .onWeekDay(ScriptApp.WeekDay.TUESDAY)
-    .atHour(22)</script>
-<script type="text/plain" id="sn-post" data-path="Performance Reporting/apps-script/publish_dashboard_web.gs" data-lines="L51-54">function doPost(e) {
+<script type="text/plain" id="sn-post" data-path="publish_dashboard_web.gs" data-lines="lines 51 to 54">function doPost(e) {
   if (!keyOk_(e)) {
     return ContentService.createTextOutput('refused: wrong key');
   }</script>
-<script type="text/plain" id="sn-lead" data-path="tools/fill_lead_drivers_tab.mjs" data-lines="L20-25">const LEAD_HEADER = ['Table', 'Dim 1', 'Dim 2', 'Dim 3', 'Dim 4', 'Sessions', 'Quote sessions',
+<script type="text/plain" id="sn-lead" data-path="fill_lead_drivers_tab.mjs" data-lines="lines 20 to 25">const LEAD_HEADER = ['Table', 'Dim 1', 'Dim 2', 'Dim 3', 'Dim 4', 'Sessions', 'Quote sessions',
   'Call sessions', 'Events', 'Engagement rate', 'Avg session seconds', 'Window start', 'Window end'];
 const LEAD_MONTHS = 8;
 const LEAD_BOT_COUNTRIES = ['Singapore', 'China', 'Hong Kong'];
 const LEAD_MIN_SESSIONS = 5;
 const LEAD_CTA_PAGES = 20;</script>
-<script type="text/plain" id="sn-groups" data-path="tools/buyer_questions.mjs" data-lines="L40-48 · 271 lines">export const GROUPS = [
+<script type="text/plain" id="sn-groups" data-path="buyer_questions.mjs" data-lines="lines 40 to 48">export const GROUPS = [
   'Price and cost',
   'Comparison',
   'Problems and risk',
@@ -705,83 +683,72 @@ const LEAD_CTA_PAGES = 20;</script>
   'Finding a supplier',
   'General question',
 ];</script>
-<script type="text/plain" id="sn-posting" data-path="tools/posting_status.mjs" data-lines="L17-19">* Matching: a published post matches a calendar row when the first 50 characters of the caption are the same
- * (after collapsing spaces). FB codes come from go.[company-domain]/fb-NNNN in the post text; LinkedIn turns links into
- * lnkd.in, so the li- code is read from where that link points (one hop only: requesting go.[company-domain] itself</script>
-<script type="text/plain" id="sn-journey" data-path="tools/ga4_buyer_journey.mjs" data-lines="L29 + L31">const buckets = { 'Same day': 0, '1 to 7 days': 0, '8 to 30 days': 0, 'Over 30 days': 0 }; let unknown = 0;
+<script type="text/plain" id="sn-journey" data-path="ga4_buyer_journey.mjs" data-lines="lines 29 and 31">const buckets = { 'Same day': 0, '1 to 7 days': 0, '8 to 30 days': 0, 'Over 30 days': 0 }; let unknown = 0;
 ...
 out.daysToQuote = { buckets, unknown };</script>
-<script type="text/plain" id="sn-guard" data-path="workflows/stage_a_session_guard.md" data-lines="L14-17">**Do not try to copy these cookies into another browser, a Playwright/Puppeteer session, or a
-cloud run.** Verified on 2026-09-08: a fresh Playwright browser using exported cookies is
-challenged by Cloudflare (error 600010) even on the same machine and the same home IP. The
-saved session only works in the profile that created it. This is not a bug to route around.</script>
-<script type="text/plain" id="sn-twins" data-path="tools/check_keyword_twins.mjs" data-lines="L35-37 · 165 lines">const FILLER = new Set(['service', 'services', 'custom', 'online', 'company', 'companies', 'shop',
+<script type="text/plain" id="sn-twins" data-path="check_keyword_twins.mjs" data-lines="lines 35 to 37">const FILLER = new Set(['service', 'services', 'custom', 'online', 'company', 'companies', 'shop',
   'near', 'me', 'best', 'top', 'for', 'and', 'of', 'the', 'a', 'an', 'in', 'with', 'to']);
 // Extra words that blog slugs carry but searchers don't type.</script>
-<script type="text/plain" id="sn-metals" data-path="tools/part-viewer/src/format.js" data-lines="L3-8">export const METALS = {
+<script type="text/plain" id="sn-metals" data-path="format.js" data-lines="lines 3 to 8">export const METALS = {
   steel: { name: 'Steel', density: 7.85, color: 0x8f969e, roughness: 0.42 },
   stainless: { name: 'Stainless', density: 7.93, color: 0xbcc2c8, roughness: 0.26 },
   aluminum: { name: 'Aluminum', density: 2.7, color: 0xd9dcdf, roughness: 0.5 },
   brass: { name: 'Brass', density: 8.5, color: 0xc8a24e, roughness: 0.3 },
 };</script>
-<script type="text/plain" id="sn-baseline" data-path="tools/website_baseline/pull2_main.mjs" data-lines="L8-11">const signalFilter = f.or(
+<script type="text/plain" id="sn-baseline" data-path="pull2_main.mjs" data-lines="lines 8 to 11">const signalFilter = f.or(
   f.inList('eventName', ['quote_click', 'form_submit']),
   f.and(f.eq('eventName', 'click'), f.contains('linkUrl', 'calendly')),
 );</script>
-<script type="text/plain" id="sn-case" data-path="tools/case-study-app/Code.gs" data-lines="L39-42 · 1,465 lines">  maxThumbChars: 45000, // a Google Sheets cell holds 50,000 characters
+<script type="text/plain" id="sn-case" data-path="Code.gs" data-lines="lines 39 to 42">  maxThumbChars: 45000, // a Google Sheets cell holds 50,000 characters
   maxFailedTries: 30,   // wrong codes allowed in the window below, across everyone
-  lockSeconds: 600,     // how long sign-in pauses after that
+  lockSeconds: 600,     // how long sign in pauses after that
   emailCodes: false     // true = email each person their code automatically</script>
-<script type="text/plain" id="sn-lint" data-path="tools/creative_pipeline/lib.mjs" data-lines="L66-71 · the copy checker">  if (/[—–]/.test(text)) errs.push('contains an em or en dash');
-  const banned = /\b(leverage|seamless|game.?changer|unlock|elevate|delve|robust|cutting.edge|revolutioni[sz]e|synergy|empower|streamline)\b/i;
+<script type="text/plain" id="sn-lint" data-path="lib.mjs" data-lines="lines 67 to 69">  const banned = /\b(leverage|seamless|game.?changer|unlock|elevate|delve|robust|cutting.edge|revolutioni[sz]e|synergy|empower|streamline)\b/i;
   const b = text.match(banned); if (b) errs.push(`banned word: "${b[0]}"`);
-  if (/\bISO\s?\d/i.test(text)) errs.push('claims an ISO number. [Company] holds none on record.');
-  if (/±\s?0\.0[013-9]\d*\s?mm/.test(text)) errs.push('tolerance other than ±0.02mm');
-  if (/\bsince\s(19|20)\d\d\b/i.test(text)) errs.push('founding year claim');</script>
-<script type="text/plain" id="sn-whisper" data-path="tools/transcribe.py" data-lines="L54-58 · 72 lines">    from faster_whisper import WhisperModel
+  if (/\bISO\s?\d/i.test(text)) errs.push('claims an ISO number. [Company] holds none on record.');</script>
+<script type="text/plain" id="sn-whisper" data-path="transcribe.py" data-lines="lines 54 to 58">    from faster_whisper import WhisperModel
     t0 = time.time()
     model = WhisperModel(a.model, device="cpu", compute_type="int8")
     segments, info = model.transcribe(str(src), beam_size=5, language=a.lang, vad_filter=True)
     segments = list(segments)  # transcription runs here</script>
-<script type="text/plain" id="sn-caption" data-path="skills/b2b-caption-hooks/SKILL.md" data-lines="L41-47 (2 lines shortened)">1. **Hook (first 1 to 2 lines).** A real buyer problem the reader recognises, stated softly and concretely.
-2. **Context.** Show what actually happens today (the email chain, the cut-down drawing, the 3 suppliers). ...
-3. **Thesis early** (OSP). Say what [Company] does about it by the third paragraph at the latest.
+<script type="text/plain" id="sn-caption" data-path="SKILL.md (caption skill)" data-lines="lines 43 to 47">3. **Thesis early** (OSP). Say what [Company] does about it by the third paragraph at the latest.
 4. **Mechanism with facts.** How it works, step by step, with numbers: lead times by process, tolerances, file types, ...
 5. **Proof.** A named client or quote when the lever is social proof; otherwise specifics are the proof.
-6. **One CTA** that says what happens after the click, ending on `[company-domain]`.
+6. **One CTA** that says what happens after the click, ending on `[company domain]`.
 7. **Hashtags** (rules below).</script>
+
 <script>
 const S = [
  // Analytics
  {a:"rep",t:"auto data ai",n:"Performance intelligence dashboard",w:"cloud",sc:"Biweekly",st:"live",d0:"2026-09-03",
-  d:"Rebuilds the marketing dashboard from 7 platforms, benchmarks each 14-day period against the previous one, generates written analysis, refreshes a permanent link and distributes it by email. A data integrity gate halts publication and issues a diagnostic report if any source is stale.",
-  nums:["14-day period benchmarking","15 data feeds","2,765 lines of analytics and rendering logic"],sn:["sn-delta","sn-ctr"]},
+  d:"Rebuilds the marketing dashboard from 7 platforms, benchmarks each 14 day period against the previous one, generates written analysis, refreshes a permanent link and distributes it by email. A data integrity gate halts publication and issues a diagnostic report if any source is stale.",
+  nums:["14 day period benchmarking","15 data feeds","2,765 lines of analytics and rendering logic"],sn:["sn-ctr"]},
  {a:"rep",t:"auto data",n:"Automated data ingestion layer",w:"apps",sc:"Weekly",st:"live",
   d:"Pulls Google Analytics, Search Console, YouTube, LinkedIn, Instagram, Facebook and UTM attribution data directly into a central data store, then archives a full snapshot ahead of each reporting cycle.",
-  nums:["17 ingestion jobs","2,337 lines of Apps Script","self-renewing API access"],sn:["sn-refresh","sn-export","sn-bootstrap"]},
+  nums:["17 ingestion jobs","2,337 lines of Apps Script","self renewing API access"],sn:["sn-refresh","sn-bootstrap"]},
  {a:"rep",t:"auto web",n:"Dashboard publishing endpoint",w:"apps",sc:"Each reporting cycle",st:"live",d0:"2026-09-10",
-  d:"A secured web endpoint that publishes the dashboard as a login-free page, so every stakeholder can open it from the report email.",sn:["sn-post"]},
+  d:"A secured web endpoint that publishes the dashboard as a login free page, so every stakeholder can open it from the report email.",sn:["sn-post"]},
  {a:"rep",t:"data",n:"Lead driver attribution model",w:"cloud",sc:"Within each report",st:"live",d0:"2026-09-15",
-  d:"Identifies which pages and traffic sources generate quote requests and call bookings over a rolling 8-month window. Recommendations appear only while the underlying pattern holds, and bot traffic is excluded.",
-  nums:["rolling 8-month window","bot traffic filtered"],sn:["sn-lead"]},
+  d:"Identifies which pages and traffic sources generate quote requests and call bookings over a rolling 8 month window. Recommendations appear only while the underlying pattern holds, and bot traffic is excluded.",
+  nums:["rolling 8 month window","bot traffic filtered"],sn:["sn-lead"]},
  {a:"rep",t:"data seo ai",n:"Buyer intent classifier",w:"cloud",sc:"Within each report",st:"ready",d0:"2026-11-20",
   d:"Classifies English and Arabic search queries into the concerns buyers bring to the purchase, then prescribes an article to write, a post to publish or a page to improve.",
   nums:["7 buyer intent categories","bilingual"],sn:["sn-groups"]},
  {a:"rep",t:"data",n:"Central performance data store",w:"manual",sc:"Refreshed weekly",st:"live",d0:"2026-09-02",
   d:"The single source of truth every report draws from, fed directly by each platform's official API.",nums:["15 data feeds"]},
- {a:"rep",t:"data content",n:"Cross-platform social diagnostic",w:"laptop",sc:"On demand",st:"live",d0:"2026-10-29",
-  d:"Extracts post-level performance from LinkedIn, Facebook, Instagram and tracked links to diagnose reach and engagement. It isolated the attributes shared by the top-performing videos.",
+ {a:"rep",t:"data content",n:"Cross platform social diagnostic",w:"laptop",sc:"On demand",st:"live",d0:"2026-10-29",
+  d:"Extracts post level performance from LinkedIn, Facebook, Instagram and tracked links to diagnose reach and engagement. It isolated the attributes shared by the top performing videos.",
   nums:["128 posts analysed","3 platforms plus link tracking"]},
  {a:"rep",t:"auto data",n:"Publishing audit tool",w:"laptop",sc:"On demand",st:"live",d0:"2026-10-25",
   d:"Reconciles what actually went live on LinkedIn, Facebook and Instagram against the editorial calendar, then records each live link automatically.",
-  nums:["3 platforms","39 calendar entries reconciled"],sn:["sn-posting"]},
+  nums:["3 platforms","39 calendar entries reconciled"]},
  {a:"rep",t:"data",n:"Buyer journey analysis",w:"laptop",sc:"On demand",st:"done",
   d:"Answers 4 strategic questions from Google Analytics: where quote requests originate, which markets are genuine, how long buyers deliberate, and which channels deliver them, AI assistants included.",
-  nums:["4 strategic questions","time-to-quote segmentation"],sn:["sn-journey"]},
+  nums:["4 strategic questions","time to quote segmentation"],sn:["sn-journey"]},
  // Competitive
  {a:"res",t:"auto research",n:"Competitor data acquisition",w:"github",sc:"Biweekly",st:"live",d0:"2026-09-10",
   d:"Collects competitor LinkedIn activity, Reddit discussion, customer reviews, website changes, paid ads and YouTube content, and diffs the ads against the previous cycle. An incomplete run publishes nothing.",
-  nums:["4 global competitors","free-tier infrastructure","$1 cost ceiling per run"]},
+  nums:["4 global competitors","free tier infrastructure","$1 cost ceiling per run"]},
  {a:"res",t:"auto research ai",n:"Competitive intelligence briefing",w:"cloud",sc:"Biweekly",st:"live",d0:"2026-09-10",
   d:"Republishes the competitor brief, a paid ad library and a strategic action plan, and writes an executive brief with 3 to 5 recommended moves.",
   nums:["3 living documents","3 to 5 strategic moves per cycle"]},
@@ -791,40 +758,40 @@ const S = [
   d:"A free alternative to paid technology lookup services. It maps the analytics and experimentation tools each competitor runs and captures their landing experience.",nums:["4 competitor stacks mapped"]},
  {a:"res",t:"research seo",n:"Buyer question research framework",w:"laptop",sc:"Repeatable",st:"done",d0:"2026-11-05",
   d:"A repeatable method for mapping the questions buyers ask at each stage before requesting a quote, documented so anyone can rerun it."},
- {a:"res",t:"seo data",n:"Search demand analysis",w:"manual",sc:"16-month dataset",st:"done",d0:"2026-11-20",
+ {a:"res",t:"seo data",n:"Search demand analysis",w:"manual",sc:"16 month dataset",st:"done",d0:"2026-11-20",
   d:"Sixteen months of search queries classified by buyer concern, which produced a prioritised list of pages to strengthen in search.",nums:["1,396 queries classified"]},
  // SEO
  {a:"seo",t:"seo auto ai",n:"SEO content brief engine",w:"laptop",sc:"Weekly",st:"live",
-  d:"Generates dated content briefs, deduplicated against every past keyword and topic. Its lead report also tracks AI search visibility, at-risk rankings and technical site health.",
-  nums:["deduplication on every brief"],sn:["sn-guard"]},
+  d:"Generates dated content briefs, deduplicated against every past keyword and topic. Its lead report also tracks AI search visibility, at risk rankings and technical site health.",
+  nums:["deduplication on every brief"]},
  {a:"seo",t:"seo auto",n:"Keyword cannibalization guard",w:"laptop",sc:"Weekly",st:"live",d0:"2026-10-22",
   d:"Screens each new keyword against past briefs, the editorial calendar, live articles and its own batch before anything is commissioned, so pages never compete with each other.",
-  nums:["4 topic pillars","4 sources cross-checked"],sn:["sn-twins"]},
- {a:"seo",t:"seo web",n:"Website re-architecture",w:"manual",sc:"Staging environment",st:"wip",d0:"2026-10-30",
+  nums:["4 topic pillars","4 sources cross checked"],sn:["sn-twins"]},
+ {a:"seo",t:"seo web",n:"Website rebuild",w:"manual",sc:"Staging environment",st:"wip",d0:"2026-10-30",
   d:"Rebuilds the site's information architecture on a duplicate environment, so the live site is untouched until launch.",
   nums:["~10 new pages","13 process × material pages","49 Arabic articles migrated"]},
- {a:"seo",t:"seo data",n:"Website experiment design",w:"manual",sc:"60-day controlled test",st:"wip",d0:"2026-10-29",
-  d:"The re-architecture blueprint paired with a controlled before-and-after experiment, so every change is judged on quote requests and call bookings rather than opinion.",
-  nums:["60-day test","3-week baseline"],sn:["sn-baseline"]},
- {a:"seo",t:"web seo",n:"Browser-based 3D CAD viewer",w:"github",sc:"Always on",st:"live",d0:"2026-11-02",
+ {a:"seo",t:"seo data",n:"Website experiment design",w:"manual",sc:"60 day controlled test",st:"wip",d0:"2026-10-29",
+  d:"The rebuild blueprint paired with a controlled before and after experiment, so every change is judged on quote requests and call bookings rather than opinion.",
+  nums:["60 day test","3 week baseline"],sn:["sn-baseline"]},
+ {a:"seo",t:"web seo",n:"Browser based 3D CAD viewer",w:"github",sc:"Always on",st:"live",d0:"2026-11-02",
   d:"Engineers open their own STEP files in the browser and see dimensions, volume and weight across 4 metals. Files never leave their device, and a quote request sits alongside.",
   nums:["~5,400 US searches a month","0.7 MB initial load","19 of 19 live tests passed"],sn:["sn-metals"]},
  {a:"seo",t:"web",n:"Interactive homepage concept",w:"github",sc:"Concept",st:"wip",d0:"2026-11-02",
-  d:"A scroll-driven narrative following one steel component from file upload to dispatch, with an interactive 3D product configurator.",
+  d:"A scroll driven narrative following one steel component from file upload to dispatch, with an interactive 3D product configurator.",
   nums:["7 materials × 7 finishes"]},
  {a:"seo",t:"web",n:"Quote experience prototype",w:"github",sc:"Clickable prototype",st:"wip",d0:"2026-11-15",
-  d:"A working prototype of a redesigned quoting flow: live pricing selection, flexible payment messaging, multi-currency display and quote-by-email.",
+  d:"A working prototype of a redesigned quoting flow: live pricing selection, flexible payment messaging, multi currency display and quote by email.",
   nums:["13 UX improvements","50 automated checks"]},
  {a:"seo",t:"seo web",n:"Service page benchmarking program",w:"laptop",sc:"Pilot",st:"wip",d0:"2026-11-17",
-  d:"Long-form service pages scored against competitors on buyer needs, with explicit placeholders wherever a fact still requires verification.",
+  d:"Long form service pages scored against competitors on buyer needs, with explicit placeholders wherever a fact still requires verification.",
   nums:["37 buyer needs × 6 competitors"]},
  {a:"seo",t:"seo auto",n:"Local search profile automation",w:"laptop",sc:"On demand",st:"live",d0:"2026-10-21",
   d:"Manages the company's Google Business Profile programmatically through Google's official API.",nums:["13 services","8 categories"]},
  {a:"seo",t:"seo",n:"SEO specialist onboarding program",w:"github",sc:"Living document",st:"live",d0:"2026-11-09",
-  d:"A prioritised, time-boxed work plan that enabled a new SEO hire to contribute from day one.",nums:["39 recommendations"]},
+  d:"A prioritised, time boxed work plan that enabled a new SEO hire to contribute from day one.",nums:["39 recommendations"]},
  {a:"seo",t:"data",n:"Conversion tracking framework",w:"manual",sc:"Analytics and Tag Manager",st:"wip",d0:"2026-11-05",
   d:"Restructured the website's conversion events so quote requests, form submissions and call bookings are each measured once and accurately.",
-  nums:["3 key conversion events","14-month data retention"]},
+  nums:["3 key conversion events","14 month data retention"]},
  // Sales
  {a:"sales",t:"data",n:"Lead qualification framework",w:"manual",sc:"Every inbound lead",st:"wip",d0:"2026-10-29",
   d:"A structured inquiry log with 4 intake questions and automatic A/B/C fit grading, giving marketing and sales one shared definition of a qualified lead."},
@@ -832,19 +799,19 @@ const S = [
   d:"An English and Arabic case study platform with secure team access, managed photo storage and automatic translation.",
   nums:["bilingual","8,130 lines"],sn:["sn-case"]},
  {a:"sales",t:"content",n:"Customer story capture system",w:"manual",sc:"Ongoing",st:"live",
-  d:"Captures real projects anonymously and releases a story only once the customer has given consent.",nums:["17-question framework"]},
+  d:"Captures real projects anonymously and releases a story only once the customer has given consent.",nums:["17 question framework"]},
  {a:"sales",t:"research",n:"Ideal customer profile research",w:"manual",sc:"Repeatable",st:"done",d0:"2026-09-30",
   d:"A structured survey of the sales team that rebuilt the company's ideal customer profile from frontline evidence.",nums:["55 questions refined to 30","profile v3"]},
  // Content
  {a:"content",t:"content auto",n:"Creative production engine",w:"laptop",sc:"Powers every content job",st:"live",d0:"2026-10-04",
-  d:"The core rendering and quality-control layer: produces posts, carousels and videos, validates every line of copy against brand rules and builds review pages.",
+  d:"The core rendering and quality control layer: produces posts, carousels and videos, validates every line of copy against brand rules and builds review pages.",
   nums:["144 files","24,827 lines","automated copy compliance"],sn:["sn-lint"]},
  {a:"content",t:"content auto ai",n:"Content repurposing agent",w:"cloud",sc:"Biweekly",st:"live",d0:"2026-09-10",
-  d:"Analyses performance data, selects the posts and articles that generate leads, and adapts each into channel-native versions."},
+  d:"Analyses performance data, selects the posts and articles that generate leads, and adapts each into channel native versions."},
  {a:"content",t:"content auto",n:"Weekly video production agent",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-09",
-  d:"Produces 3 captioned videos every week and publishes them to a private review page.",nums:["3 videos a week","45-clip asset library"]},
+  d:"Produces 3 captioned videos every week and publishes them to a private review page.",nums:["3 videos a week","45 clip asset library"]},
  {a:"content",t:"content auto",n:"Weekly social carousel agent",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-09",
-  d:"Produces the week's branded posts and conversion-focused posts, packaged as 2 carousels.",nums:["2 carousels a week"]},
+  d:"Produces the week's branded posts and conversion focused posts, packaged as 2 carousels.",nums:["2 carousels a week"]},
  {a:"content",t:"content auto",n:"Weekly editorial carousel agent",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-15",
   d:"Produces 1 editorial carousel with captions each week, with topic rotation that prevents repetition within 4 weeks.",nums:["6 to 8 slides"]},
  {a:"content",t:"auto",n:"Production digest orchestrator",w:"cloud",sc:"Weekly",st:"live",d0:"2026-10-24",
@@ -861,10 +828,10 @@ const S = [
   d:"A 3D film of a precision shaft being manufactured. Its camera choreography is saved as a reusable kit.",nums:["47 s"]},
  {a:"content",t:"content web",n:"Platform launch film",w:"laptop",sc:"v1",st:"verdict",d0:"2026-11-20",
   d:"A 3D scene built in three.js around a live recording of the quoting platform.",nums:["40 s"]},
- {a:"content",t:"content",n:"Sketch-to-part film",w:"laptop",sc:"v3",st:"verdict",d0:"2026-11-05",
+ {a:"content",t:"content",n:"Sketch to part film",w:"laptop",sc:"v3",st:"verdict",d0:"2026-11-05",
   d:"A single continuous story: a sketch becomes an engineering drawing, then a 3D model, then the finished part in hand.",nums:["21 s, vertical"]},
  {a:"content",t:"content ai",n:"Materials film with AI voice",w:"laptop",sc:"v3",st:"verdict",d0:"2026-11-05",
-  d:"A presenter-led hook and brass components film, narrated with a voice model trained locally at no cost.",nums:["25 s"]},
+  d:"A presenter led hook and brass components film, narrated with a voice model trained locally at no cost.",nums:["25 s"]},
  {a:"content",t:"content data",n:"LinkedIn format experiment",w:"laptop",sc:"Concluded",st:"ready",d0:"2026-11-17",
   d:"Audited historical LinkedIn content, developed competing carousel styles, scored them and established the default format.",nums:["152 posts audited"]},
  {a:"content",t:"content",n:"Carousel asset register",w:"artifact",sc:"Continuously updated",st:"live",d0:"2026-11-20",
@@ -873,7 +840,7 @@ const S = [
   d:"Applies an AI virality model to locate weak moments within an edit. Testing showed its headline score barely tracked real watch time, so it is used for diagnosis, not selection."},
  {a:"content",t:"content ai",n:"Reference media intelligence",w:"laptop",sc:"On demand",st:"live",d0:"2026-11-05",
   d:"Extracts captions and frames from reference videos and transcribes speech locally at no cost, including Egyptian Arabic.",sn:["sn-whisper"]},
- {a:"content",t:"content",n:"Automated storyboarding",w:"laptop",sc:"Pre-production",st:"live",d0:"2026-11-04",
+ {a:"content",t:"content",n:"Automated storyboarding",w:"laptop",sc:"Preproduction",st:"live",d0:"2026-11-04",
   d:"Renders storyboard frames from real brand assets, so every film is approved before production begins."},
  {a:"content",t:"content ai",n:"Generative video cost benchmark",w:"manual",sc:"Reference study",st:"done",d0:"2026-10-31",
   d:"A structured evaluation of what each generative video feature costs and delivers on real brand assets, completed before any budget was committed.",nums:["382 credits evaluated","cost per second recorded"]},
@@ -881,15 +848,15 @@ const S = [
  {a:"ai",t:"ai content",n:"B2B caption framework",w:"laptop",sc:"Every caption",st:"live",d0:"2026-10-02",
   d:"An AI instruction set encoding the approved B2B caption method: 3 ranked options, the persuasion lever applied, an opening comment and hashtags.",nums:["v3","202 lines"],sn:["sn-caption"]},
  {a:"ai",t:"ai",n:"Prompt engineering framework",w:"laptop",sc:"Any AI system",st:"live",d0:"2026-11-04",
-  d:"Transforms a rough request into a production-grade prompt for any AI system, and documents what changed and why."},
- {a:"ai",t:"ai research",n:"Synthetic buyer panel",w:"laptop",sc:"Pre-production",st:"live",d0:"2026-11-18",
+  d:"Transforms a rough request into a production grade prompt for any AI system, and documents what changed and why."},
+ {a:"ai",t:"ai research",n:"Synthetic buyer panel",w:"laptop",sc:"Preproduction",st:"live",d0:"2026-11-18",
   d:"An AI procurement buyer and a deliberately sceptical counterpart score creative drafts out of 100 before any design time is committed.",nums:["9 evaluation rounds"]},
  {a:"ai",t:"ai",n:"AI product quality assurance",w:"laptop",sc:"On demand",st:"done",d0:"2026-11-21",
-  d:"Stress-tested the company's AI quoting product against real engineering drawings and file formats, and documented where its pricing failed."}
+  d:"Stress tested the company's AI quoting product against real engineering drawings and file formats, and documented where its pricing failed."}
 ];
 S.forEach((s,i)=>s.id="sys-"+i);
 const AREAS=[{k:"rep",name:"Telemetry & analytics"},{k:"res",name:"Market & competitive intelligence"},{k:"seo",name:"Web product, search & conversion"},{k:"sales",name:"Sales enablement"},{k:"content",name:"Production systems & agents"},{k:"ai",name:"Applied AI"}];
-const STAT={live:"in production",done:"delivered",ready:"launch-ready",wip:"in development",verdict:"in review"};
+const STAT={live:"in production",done:"delivered",ready:"ready to launch",wip:"in development",verdict:"in review"};
 const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 ["h-total","j-total","i-total"].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=S.length});
 
